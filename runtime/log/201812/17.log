@@ -1,0 +1,398 @@
+---------------------------------------------------------------
+[ 2018-12-17T19:02:19+08:00 ] 127.0.0.1 GET shop.com/
+[è¿è¡Œæ—¶é—´ï¼š0.113006s] [åžåçŽ‡ï¼š8.85req/s] [å†…å­˜æ¶ˆè€—ï¼š2,371.50kb] [æ–‡ä»¶åŠ è½½ï¼š74]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [1049]SQLSTATE[HY000] [1049] Unknown database 'cltdemo_db'[D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\library\think\db\Connection.php:528]
+---------------------------------------------------------------
+[ 2018-12-17T19:10:04+08:00 ] 127.0.0.1 GET shop.com/
+[è¿è¡Œæ—¶é—´ï¼š21.065205s] [åžåçŽ‡ï¼š0.05req/s] [å†…å­˜æ¶ˆè€—ï¼š2,371.57kb] [æ–‡ä»¶åŠ è½½ï¼š74]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\library\think\db\Connection.php:528]
+---------------------------------------------------------------
+[ 2018-12-17T19:10:25+08:00 ] 127.0.0.1 GET shop.com/
+[è¿è¡Œæ—¶é—´ï¼š21.098206s] [åžåçŽ‡ï¼š0.05req/s] [å†…å­˜æ¶ˆè€—ï¼š2,371.57kb] [æ–‡ä»¶åŠ è½½ï¼š74]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\library\think\db\Connection.php:528]
+---------------------------------------------------------------
+[ 2018-12-17T19:10:51+08:00 ] 127.0.0.1 GET shop.com/
+[è¿è¡Œæ—¶é—´ï¼š21.058205s] [åžåçŽ‡ï¼š0.05req/s] [å†…å­˜æ¶ˆè€—ï¼š2,371.57kb] [æ–‡ä»¶åŠ è½½ï¼š74]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\library\think\db\Connection.php:528]
+---------------------------------------------------------------
+[ 2018-12-17T19:11:48+08:00 ] 127.0.0.1 GET shop.com/
+[è¿è¡Œæ—¶é—´ï¼š0.653037s] [åžåçŽ‡ï¼š1.53req/s] [å†…å­˜æ¶ˆè€—ï¼š3,224.09kb] [æ–‡ä»¶åŠ è½½ï¼š82]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\index_index.html [ array (
+  0 => 'sys',
+  1 => 'action',
+  2 => 'controller',
+  3 => 'title',
+  4 => 'keywords',
+  5 => 'description',
+  6 => 'category',
+  7 => 'adList',
+  8 => 'linkList',
+  9 => 'changyan',
+  10 => 'time',
+  11 => 'list',
+  12 => 'style',
+  13 => 'js',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098005s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 0  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `ismenu` = 1 ORDER BY `sort` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_ad` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_ad` WHERE  `type_id` = 1  AND `open` = 1 ORDER BY `sort` ASC LIMIT 4 [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_link` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_link` WHERE  `open` = 1 ORDER BY `sort` ASC [ RunTime:0.012001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545045107 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.014001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-11'  AND `type` = 2 LIMIT 1 [ RunTime:0.012001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-17'  AND `type` = 1 LIMIT 1 [ RunTime:0.013001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `a`.*,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  ( posid = 1 and (status = 1 or (status = 0 and createtime <1545045108)) ) ORDER BY `a`.`sort` ASC,`a`.`createtime` DESC,`a`.`id` DESC LIMIT 4 [ RunTime:0.017001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_debris` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_debris` WHERE  ( type_id = 1 ) LIMIT 3 [ RunTime:0.013001s ]
+---------------------------------------------------------------
+[ 2018-12-17T19:11:51+08:00 ] 127.0.0.1 GET shop.com/about-2.html
+[è¿è¡Œæ—¶é—´ï¼š0.256015s] [åžåçŽ‡ï¼š3.91req/s] [å†…å­˜æ¶ˆè€—ï¼š2,906.16kb] [æ–‡ä»¶åŠ è½½ï¼š83]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'about-<catId>',
+  'route' => 'home/about/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'catId' => '2',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D; PHPSESSID=jj8b1jmt7c9ji3c4flm9jbqd3a',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://shop.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\page_show.html [ array (
+  0 => 'sys',
+  1 => 'action',
+  2 => 'controller',
+  3 => 'title',
+  4 => 'keywords',
+  5 => 'description',
+  6 => 'category',
+  7 => 'adList',
+  8 => 'linkList',
+  9 => 'changyan',
+  10 => 'time',
+  11 => 'info',
+) ]
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.017001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_page` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_page` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT `template_show` FROM `clt_category` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.012001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020002s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `a`.*,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  ( (posid = 1 or posid=2) and (status = 1 or (status = 0 and createtime <1545045111)) ) ORDER BY `a`.`sort` ASC,`a`.`createtime` DESC,`a`.`id` DESC LIMIT 8 [ RunTime:0.017001s ]
+[ error ] [8]æœªå®šä¹‰æ•°ç»„ä¸‹æ ‡: 1[D:\phpStudy\PHPTutorial\WWW\smilexpress\application\common.php:57]
+[ error ] [8]æœªå®šä¹‰æ•°ç»„ä¸‹æ ‡: 1[D:\phpStudy\PHPTutorial\WWW\smilexpress\application\common.php:57]
+[ error ] [8]æœªå®šä¹‰æ•°ç»„ä¸‹æ ‡: 1[D:\phpStudy\PHPTutorial\WWW\smilexpress\application\common.php:57]
+[ error ] [8]æœªå®šä¹‰æ•°ç»„ä¸‹æ ‡: 1[D:\phpStudy\PHPTutorial\WWW\smilexpress\application\common.php:57]
+[ error ] [8]æœªå®šä¹‰æ•°ç»„ä¸‹æ ‡: 1[D:\phpStudy\PHPTutorial\WWW\smilexpress\application\common.php:57]
+---------------------------------------------------------------
+[ 2018-12-17T19:11:52+08:00 ] 127.0.0.1 GET shop.com/download-14.html
+[è¿è¡Œæ—¶é—´ï¼š0.405023s] [åžåçŽ‡ï¼š2.47req/s] [å†…å­˜æ¶ˆè€—ï¼š3,044.92kb] [æ–‡ä»¶åŠ è½½ï¼š83]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'download-<catId>',
+  'route' => 'home/download/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'catId' => '14',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D; PHPSESSID=jj8b1jmt7c9ji3c4flm9jbqd3a',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://shop.com/about-2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '14',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\download_list.html [ array (
+  0 => 'sys',
+  1 => 'action',
+  2 => 'controller',
+  3 => 'title',
+  4 => 'keywords',
+  5 => 'description',
+  6 => 'category',
+  7 => 'adList',
+  8 => 'linkList',
+  9 => 'changyan',
+  10 => 'time',
+  11 => 'list',
+  12 => 'page',
+) ]
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.015001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023002s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.016001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022002s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_download` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `clt_download` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  (  catid = 14 and (status = 1 or (status = 0 and createtime <1545045112)) ) LIMIT 1 [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT `a`.*,`c`.`catdir` FROM `clt_download` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  (  catid = 14 and (status = 1 or (status = 0 and createtime <1545045112)) ) ORDER BY `sort` ASC,`createtime` DESC LIMIT 0,10 [ RunTime:0.036002s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020002s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `template_list` FROM `clt_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.014000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `clt_download` WHERE  ( posid = 2 and catid=14  ) LIMIT 10 [ RunTime:0.016001s ]
+---------------------------------------------------------------
+[ 2018-12-17T19:11:53+08:00 ] 127.0.0.1 GET shop.com/system-4.html
+[è¿è¡Œæ—¶é—´ï¼š0.321018s] [åžåçŽ‡ï¼š3.12req/s] [å†…å­˜æ¶ˆè€—ï¼š3,009.89kb] [æ–‡ä»¶åŠ è½½ï¼š83]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'system-<catId>',
+  'route' => 'home/system/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'catId' => '4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D; PHPSESSID=jj8b1jmt7c9ji3c4flm9jbqd3a',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://shop.com/download-14.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '4',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\picture_list.html [ array (
+  0 => 'sys',
+  1 => 'action',
+  2 => 'controller',
+  3 => 'title',
+  4 => 'keywords',
+  5 => 'description',
+  6 => 'category',
+  7 => 'adList',
+  8 => 'linkList',
+  9 => 'changyan',
+  10 => 'time',
+  11 => 'options',
+  12 => 'list',
+  13 => 'page',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.015000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `moduleid` = 3  AND `field` = 'group' LIMIT 1 [ RunTime:0.013001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_picture` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `clt_picture` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  (  catid = 4 and (status = 1 or (status = 0 and createtime <1545045113)) ) LIMIT 1 [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT `a`.*,`c`.`catdir` FROM `clt_picture` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  (  catid = 4 and (status = 1 or (status = 0 and createtime <1545045113)) ) ORDER BY `sort` ASC,`createtime` DESC LIMIT 0,15 [ RunTime:0.015001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `template_list` FROM `clt_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.015001s ]

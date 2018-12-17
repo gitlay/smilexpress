@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>出口物流-详情</title>
+		<script src="js/mui.min.js"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+	</head>
+	<style type="text/css">
+		header img {
+			width: 100%;
+		}
+		
+		.qs_main {
+			background-color: #FFF;
+			padding: .2rem .2rem 1.5rem;
+		}
+		
+		.problem_info {
+			padding: .3rem;
+		}
+		
+		.problem_info h1 {
+			position: relative;
+			font-size: .34rem;
+			line-height: .46rem;
+			margin-bottom: .2rem;
+		}
+		
+		.problem_info label {
+			font-size: .24rem;
+			color: #999999;
+			display: block;
+			padding-bottom: .2rem;
+			border-bottom: 1px solid #c5c4c3;
+			margin-bottom: .2rem;
+		}
+		
+		.problem_info p {
+			line-height: .36rem;
+			text-indent: 2em;
+		}
+		
+		.select-row {
+			font-family: 'Helvetica Neue', Helvetica, sans-serif;
+			line-height: 1.1;
+			padding: 11px 15px;
+			display: block;
+		}
+		
+		.mui-btn {
+			padding: 6px 30px;
+		}
+		
+		.mui-btn-primary {
+			background-color: #FF6200;
+			border: 1px solid #FF6200;
+		}
+		
+		.mui-btn-blue.mui-active:enabled,
+		.mui-btn-blue:enabled:active,
+		.mui-btn-primary.mui-active:enabled,
+		.mui-btn-primary:enabled:active,
+		input[type=submit].mui-active:enabled,
+		input[type=submit]:enabled:active {
+			color: #fff;
+			border: 1px solid #FF6200;
+			background-color: #FF6200;
+		}
+		
+		.mui-btn-danger.mui-active:enabled,
+		.mui-btn-danger:enabled:active,
+		.mui-btn-negative.mui-active:enabled,
+		.mui-btn-negative:enabled:active,
+		.mui-btn-red.mui-active:enabled,
+		.mui-btn-red:enabled:active {
+			color: #fff;
+			border: 1px solid #595757;
+			background-color: #595757;
+		}
+		
+		.mui-btn-danger {
+			background-color: #595757;
+			border: 1px solid #595757;
+		}
+		
+		.query_result {
+			margin-top: .3rem;
+		}
+		
+		.query_result h1 {
+			font-size: .3rem;
+			color: #FF6200;
+			margin-bottom: .2rem;
+		}
+		
+		.query_result p {
+			font-size: .26rem;
+			line-height: .38rem;
+			color: #595757;
+			text-indent: 1em;
+		}
+		
+		.query_result h1 span {
+			font-size: .24rem;
+			color: #777777;
+		}
+		
+		.query_result img {
+			width: 100%;
+		}
+		
+		.result_list {
+			padding: .1rem;
+			box-sizing: border-box;
+			height: 4.3rem;
+			border: 1px solid #9fa0a0;
+		}
+		
+		.result_list textarea {
+			height: 100%;
+			width: 100%;
+		}
+		
+		.query_bottom {
+			margin-top: .2rem;
+			text-align: center;
+		}
+		
+		.query_bottom button {
+			width: 2rem;
+			height: .6rem;
+			background-color: #FF6200;
+			color: #FFF;
+		}
+		/*.mui-input-row{
+			margin-bottom: .2rem;
+		}
+		.mui-input-row input{
+			border: 1px solid #898989!important;
+		}*/
+		
+		.de_radios {
+			display: flex;
+			display: -webkit-flex;
+			align-items: center;
+		}
+		
+		.de_radio {
+			flex: 1;
+			-webkit-flex: 1;
+			display: flex;
+			display: -webkit-flex;
+			align-items: center;
+		}
+		
+		.de_radio label {
+			display: block;
+			flex: 1;
+			-webkit-flex: 1;
+		}
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="image/index-banner.png" />
+		</header>
+		<div class="qs_main">
+			<div class="query_result">
+				<h1>产品背景/Product Background</h1>
+				<p>2018年4月3日，亚马逊宣布其全球开店（Global Selling）项目Amazon Business将向印度出口商开放，这使得印度的B2B卖家、制造商和出口商能够接触到亚马逊平台上成千上万的企业客户。 向印度卖家开放全球开店B2B市场，是亚马逊改变印度卖家买卖方式的另一个里程碑式决定。2015年亚马逊推出全球开店项目，为印度B2C产品出口商开辟了新的市场。目前，超过32000家印度出口商为亚马逊在全球10大站点的客户提供超过9000万件印度制造产品。</p>
+			</div>
+			<div class="query_result">
+				<h1>产品介绍与历史/Introduction and History</h1>
+				<p>印度FBA专线服务，货运代码INFBA，是三态速递（SFC）联合印度本地优质物流承运商资源推出的一款运送至印度亚马逊仓库的专线服务。该服务空运头程安排从香港直飞印度，一周7天航班， 完成清关后交给印度本地承运商派送，全程时效6-10天。清关时无需客户提供印度进口商（IOR）。</p>
+				<img src="image/d1.png" />
+			</div>
+			<div class="query_result">
+				<h1>产品设计/Product Design</h1>
+				<img src="image/d2.png" />
+			</div>
+			<div class="query_result">
+				<h1>产品详情/Notice Details</h1>
+				<p style="text-indent: 0em;">计重模式:</br>
+					1.重量取整计费，不足1kg按1kg计费；</br>
+					2.体积重和实重两者取大收费，体积计算公式：长cm X 宽cm X 高cm /6000；</br>
+					3.支持一票多件，50kg起收，不足50kg按50kg计费。</br>
+					</br>
+					重量限制:</br>
+					1.单箱重量限制：≤22kg；</br>
+					2.支持一票多件，50kg起收，不足50kg按50kg计费。</br>
+					</br>
+					计重模式:</br>
+					1.重量取整计费，不足1kg按1kg计费；</br>
+					2.体积重和实重两者取大收费，体积计算公式：长cm X 宽cm X 高cm /6000；</br>
+					3.支持一票多件，50kg起收，不足50kg按50kg计费。</br>
+					</br>
+					重量限制:</br>
+					1.单箱重量限制：≤22kg；</br>
+					2.支持一票多件，50kg起收，不足50kg按50kg计费。 </p>
+			</div>
+		</div>
+		<!--底部导航-->
+		<nav class="bar-footer">
+			<a href="index.html" class="bar-footer-item bar-footer-item-on">
+				<img src="image/icon-1-act.png" />
+				<label>首页</label>
+			</a>
+			<a href="about_us.html" class="bar-footer-item">
+				<img src="image/icon-2.png" />
+				<label>关于我们</label>
+			</a>
+			<a href="search.html" class="bar-footer-item">
+				<img class="big-item" src="image/icon-3.png" />
+				<label>站内搜索</label>
+			</a>
+			<a href="help_support.html"  class="bar-footer-item">
+				<img src="image/icon-4.png" />
+				<label>帮助支持</label>
+			</a>
+			<a class="bar-footer-item">
+				<img src="image/icon-5.png" />
+				<label>个人中心</label>
+			</a>
+		</nav>
+		<!--底部导航-->
+	</body>
+	<script type="text/javascript">
+		function chooseOne() {
+			var picker = new mui.PopPicker();
+			picker.setData([{
+				value: "first",
+				text: "中国"
+			}, {
+				value: "second",
+				text: "美国"
+			}, {
+				value: "third",
+				text: "日本"
+			}, {
+				value: "fourth",
+				text: "韩国"
+			}, {
+				value: "fifth",
+				text: "加拿大"
+			}])
+			picker.show(function(SelectedItem) {
+				console.log(SelectedItem[0].text)
+				$('#mudidi').text(SelectedItem[0].text)
+			})
+		}
+
+		function chooseTwo() {
+			var picker = new mui.PopPicker();
+			picker.setData([{
+				value: "first",
+				text: "包裹"
+			}, {
+				value: "second",
+				text: "包裹B"
+			}])
+			picker.show(function(SelectedItem) {
+				console.log(SelectedItem[0].text)
+				$('#kjlx').text(SelectedItem[0].text)
+			})
+		}
+	</script>
+
+</html>

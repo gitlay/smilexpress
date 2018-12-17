@@ -1,130 +1,146 @@
 {include file="common/head"/}
-{$style|raw}
-<script>
-    $(document).ready(function() {
-        //Camera Jquery
-        $('#camera-slide').camera({
-            thumbnails: false,
-            hover: false,
-            pagination: false
-        });
-    });
+<div class="bodyWrap">
+    <!-- 主体区 s-->
+    <div class="mainbody cent">
+        <div class="tongzhi lineh40 ">
+            <!-- listScroll-x|y #5 s-->
+            <!-- include jcMarquee.js & component.less #5 &底部滚动通知script -->
+            <div id="Marquee_x" class="ov">
+                <ul style="width: 1000%;">
+                    <li class="">
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
+                        </div>
 
-</script>
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
+                        </div>
 
-<!-- slideshow start here -->
-<section id="slideshow-wrapper">
-    <div class="camera_wrap" id="camera-slide">
-        <!-- slide 1 here -->
-        {volist name="adList" id="vo" key="i"}
-        {if condition='$i eq 1'}
-        <div data-src="/static/home/images/slideshow/bg-slide1.jpg">
-            <div class="caption-type1 moveFromLeft">
-                <h1>{$vo.name}</h1>
-                <p>{$vo.content}</p>
-                <a href="http://demo.cltphp.com/" target="_blank" title="CLTPHP演示站点" class="button-slide medium gray">演示站点</a>
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
+                        </div>
+                    </li>
+                    <li class="clone">
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
+                        </div>
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
+                        </div>
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="caption-type1 moveFromRight">
-                <img src="{$vo.pic}" alt="{$vo.name}" />
-            </div>
+            <!-- listScroll-x|y #5 e-->
         </div>
-        {elseif condition='$i eq 2'}
-        <!-- slide 2 here -->
-        <div data-src="/static/home/images/slideshow/bg-slide2.jpg">
-            <div class="caption-type2 moveFromTop">
-                <h1>{$vo.name}</h1>
-                <p>{$vo.content}</p>
-            </div>
-            <div class="caption-type2 moveFromBottom">
-                <img src="{$vo.pic}" alt="{$vo.name}" />
-            </div>
-        </div>
-        {else /}
-        <!-- slide 3 here -->
-        <div data-src="/static/home/images/slideshow/bg-slide3.jpg">
-            <div class="caption-type3 moveFromLeft">
-                <img src="{$vo.pic}" alt="{$vo.name}" />
-            </div>
-            <div class="caption-type3 moveFromRight">
-                <h1>{$vo.name}</h1>
-                <p>{$vo.content}</p>
-            </div>
-        </div>
-        {/if}
-        {/volist}
-    </div>
-    <div id="slideshow-noscript"><h4>你准备好与CLTPHP共同搭建您的网络平台了吗？</h4></div>
-</section>
-<!-- slideshow end here --> 
-<div class="copyrights">Collect from <a href="http://www.cltphp.com/"  title="CLTPHP内容管理系统">CLTPHP内容管理系统</a></div>
-<!-- featured client start here -->
-<section id="featured-wrapper">
-    <div id="featured-logo-list">
-        <div class="row">
-            <div class="two columns mobile-two mobile-view">
-                <h6 class="featured-client">第三方资源 :</h6>
-            </div>
-            <div class="two columns mobile-two mobile-view">
-                <img src="/static/home/images/sample-images/client1.png" alt="layui" />
-            </div>
-            <div class="two columns mobile-two mobile-view">
-                <img src="/static/home/images/sample-images/client2.png" alt="thinkphp" />
-            </div>
-            <div class="two columns mobile-two mobile-view">
-                <img src="/static/home/images/sample-images/client3.png" alt="angularjs" />
-            </div>
-            <div class="two columns mobile-two mobile-view">
-                <img src="/static/home/images/sample-images/client4.png" alt="jquery" />
-            </div>
-            <div class="two columns mobile-two mobile-view">
-                <img src="/static/home/images/sample-images/client5.png" alt="ztree" />
-            </div>
-        </div>
-    </div>
-</section>
-<!-- featured client end here -->
-
-<!-- maincontent start here -->
-<section id="content-wrapper">
-    <div class="row">
-        {clist db='article' id='vo' where="posid = 1" limit='4'}
-        <div class="three columns mobile-two">
-            <h5><a style="{$vo.title_style}" href="{:url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}" title="{$vo.title}">{:str_cut($vo.title,12,'...')}</a></h5>
-            <div class="link-url">
-                <a href="{:url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}" target="_blank" title="{$vo.title}">
-                    <img src="{:imgUrl($vo['thumb'],'/static/home/images/portfolio-thumb/p'.$k.'.jpg')}" alt="{$vo.title}" class="fade" />
-                </a>
-            </div>
-        </div>
-        {/clist}
-    </div>
-    <div id="featured-wrapper2">
-        <div class="row front-feature-icon">
-            {tlist db='debris' id='list' limit="3" where="type_id = 1"}
-            <div class="four columns mobile-one">
-                <img src="/static/home/images/sample-images/front-icon{$k+1}.png" alt="{$list.title}" class="img-center" />
-                <h5>{$list.title}</h5>
-                <p>{$list.content|raw}</p>
-            </div>
-            {/tlist}
-        </div>
-    </div>
-    <div class="row">
-        <div class="twelve columns">
-            <div class="featured-box">
-                <div class="nine columns">
-                    <h5>你准备好与CLTPHP共同打造您的网络平台了吗？</h5>
-                    <p>CLTPHP建站系统免费下载，只有您的支持，才能使得我们在开源的世界里走的更好！</p>
+        <div class="">
+            <div class="two-wrap ckwl">
+                <div class="two-wrap-item">
+                    <h1>FBA头程</h1>
+                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
+                    <div class="two-wrap-item-img"></div>
                 </div>
-                <div class="three columns">
-                    <a href="http://qiniu.cltphp.com/cltphp5.2.2.zip" class="button medium gray arrow-icon" rel="nofollow" title="{$sys.title}">点击下载</a>
+                <div class="two-wrap-item">
+                    <h1>沃虎专线</h1>
+                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
+                    <div class="two-wrap-item-img"></div>
                 </div>
-                <div class="clear"></div>
+                <div class="two-wrap-item">
+                    <h1>国际快递</h1>
+                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
+                    <div class="two-wrap-item-img"></div>
+                </div>
+            </div>
+            <div class="two-wrap zzyw">
+                <div class="two-wrap-item">
+                    <h1>保险服务</h1>
+                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
+                    <div class="two-wrap-item-img"></div>
+                </div>
+                <div class="two-wrap-item">
+                    <h1>包装耗材</h1>
+                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
+                    <div class="two-wrap-item-img"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mainNews">
+            <div class="mainNewsLeft fl">
+                <div class="main-news-menu">
+                    <div class="main-news-menu-item main-news-menu-item-on">行业新闻</div>
+                    <div class="main-news-menu-item">公司新闻</div>
+                    <div class="main-news-menu-item">重要公告</div>
+                    <div class="main-news-menu-item">燃油附加费</div>
+                    <div class="main-news-menu-item">常见问题</div>
+                </div>
+                <div class="main-news-list">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
+                                <p>2018-11-06</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
+                                <p>2018-11-06</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
+                                <p>2018-11-06</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
+                                <p>2018-11-06</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
+                                <p>2018-11-06</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
+                                <p>2018-11-06</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
+                                <p>2018-11-06</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mainNewsRight fr">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://logzm.com/upload/2018041139100825.jpg"/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://logzm.com/upload/2018041139100825.jpg"/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://logzm.com/upload/2018041139100825.jpg"/>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </div>
     </div>
-</section>
-<script>
-    {$js|raw}
-</script>
-{include file="common/footer"/}
+    <!-- 主体区 e-->
+
+    {include file="common/footer"/}

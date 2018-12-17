@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<script src="js/mui.min.js"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style>
+			.swiper-slide img {
+				width: 100%;
+			}
+			
+			.swiper-pagination-bullet-active {
+				opacity: 1;
+				background: #FFF;
+			}
+			
+			.center {
+				text-align: center;
+			}
+			
+			.home_search {
+				display: flex;
+				display: -webkit-flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.home_search label {
+				color: #ff6200;
+			}
+			
+			.home_search_input {
+				margin-left: .2rem;
+				padding: 0rem .2rem;
+				border-radius: .2rem;
+				display: flex;
+				display: -webkit-flex;
+				align-items: center;
+				justify-content: center;
+				height: .5rem;
+				border: .02rem solid #959595;
+			}
+			
+			.home_search_input i {
+				font-size: .26rem;
+				margin-right: .2rem;
+			}
+			
+			.home_search_input input {
+				flex: 1;
+				-webkit-flex: 1;
+			}
+			
+			.home_nav {
+				margin-top: .3rem;
+				display: flex;
+				display: -webkit-flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.home_nav_item {
+				flex: 1;
+				-webkit-flex: 1;
+				margin-left: .1rem;
+			}
+			
+			.home_nav_item img {
+				width: 100%;
+			}
+			
+			.home_nav_item:first-child {
+				margin-left: 0;
+			}
+			
+			.wrapper_defalut {
+				padding: 0rem .3rem;
+			}
+			
+			.wrapper_defalut h1 {
+				position: relative;
+				font-size: .3rem;
+				padding-left: .12rem;
+				display: block;
+				margin: .22rem 0rem;
+			}
+			
+			.wrapper_defalut h1 span {
+				font-size: .22rem;
+				margin-left: .2rem;
+			}
+			
+			.wrapper_defalut h1::after {
+				content: ' ';
+				position: absolute;
+				left: 0;
+				top: -.03rem;
+				margin-right: 5px;
+				height: .32rem;
+				width: .05rem;
+				background-color: #FF6200;
+			}
+			
+			.wrapper_flex {
+				display: flex;
+				display: -webkit-flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0rem .3rem;
+			}
+			
+			.wrapper_flex_item {
+				padding: .16rem;
+				flex: 1;
+				-webkit-flex: 1;
+				background-color: #FFF;
+				margin-right: .1rem;
+				-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+				box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+			}
+			
+			.wrapper_flex_item:last-child {
+				margin-right: 0rem;
+			}
+			
+			.wrapper_float_item {
+				display: flex;
+				display: -webkit-flex;
+				align-items: center;
+				justify-content: center;
+				padding: .16rem;
+				flex: 1;
+				-webkit-flex: 1;
+				background-color: #FFF;
+				margin-right: .1rem;
+				-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+				box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+			}
+			
+			.wrapper_float_item:last-child {
+				margin-right: 0rem;
+			}
+			
+			.wrapper_float_item img {
+				height: 1.4rem;
+				width: 1.4rem;
+			}
+			
+			.wrapper_float_item div {
+				flex: 1;
+				-webkit-flex: 1;
+				width: 0px;
+				margin-left: .2rem;
+			}
+			
+			.wrapper_float_item div h1 {
+				font-size: .26rem;
+				text-align: center;
+				margin-bottom: .1rem;
+			}
+			
+			.wrapper_float_item div p {
+				font-size: .22rem;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			
+			.wrapper_flex_item h1 {
+				font-size: .26rem;
+				text-align: center;
+				margin-bottom: .1rem;
+			}
+			
+			.wrapper_flex_item p {
+				font-size: .22rem;
+				text-indent: 1em;
+				margin-bottom: .1rem;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			
+			.wrapper_flex_item img {
+				width: 100%;
+			}
+			
+			.news_list {
+				background-color: #FFF;
+			}
+			
+			.news_item {
+				padding: .3rem;
+				display: flex;
+				display: -webkit-flex;
+				justify-content: space-between;
+			}
+			
+			.news_item label {
+				width: 60%;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<!-- 轮播 s -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="image/index-banner.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="image/index-banner.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="image/index-banner.png" />
+					</div>
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination"></div>
+			</div>
+			<!-- 轮播 e -->
+			<div class="wrapper center">
+				<div class="home_search">
+					<label>快递追踪:</label>
+					<div class="home_search_input">
+						<i class="mui-icon mui-icon-search"></i>
+						<input placeholder="描述内容" />
+					</div>
+				</div>
+				<div class="home_nav">
+					<div class="home_nav_item">
+						<img src="image/kfrx.png" />
+					</div>
+					<div class="home_nav_item">
+						<img src="image/yfcx.png" />
+					</div>
+					<div class="home_nav_item">
+						<img src="image/wsxd.png" />
+					</div>
+					<div class="home_nav_item">
+						<img src="image/lyfk.png" />
+					</div>
+					<div class="home_nav_item">
+						<img src="image/wjxz.png" />
+					</div>
+				</div>
+			</div>
+			<!-- 出口物流 s -->
+			<div class="wrapper_defalut">
+				<h1>出口物流</h1>
+			</div>
+			<div class="wrapper_flex">
+				<div class="wrapper_flex_item">
+					<h1>FBA头程</h1>
+					<p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务</p>
+					<img src="image/tab3.png" />
+				</div>
+				<div class="wrapper_flex_item">
+					<h1>FBA头程</h1>
+					<p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务</p>
+					<img src="image/tab3.png" />
+				</div>
+				<div class="wrapper_flex_item">
+					<h1>FBA头程</h1>
+					<p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务</p>
+					<img src="image/tab3.png" />
+				</div>
+			</div>
+			<!-- 出口物流 e -->
+			<!-- 增值业务 s -->
+			<div class="wrapper_defalut">
+				<h1>增值业务</h1>
+			</div>
+			<div class="wrapper_flex">
+				<div class="wrapper_float_item">
+					<img src="image/tab3.png" />
+					<div>
+						<h1>保险服务</h1>
+						<p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务</p>
+					</div>
+				</div>
+				<div class="wrapper_float_item">
+					<img src="image/tab3.png" />
+					<div>
+						<h1>包装耗材</h1>
+						<p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务</p>
+					</div>
+				</div>
+			</div>
+			<!-- 增值业务 e -->
+			<!-- 新闻列表 s -->
+			<div class="wrapper_defalut">
+				<h1>新闻中心 <span>行业新闻</span> <span>公司新闻</span> <span>燃油费</span> <span>常见问题</span></h1>
+			</div>
+			<div class="news_list">
+				<div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div>
+				<div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div>
+				<div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div>
+				<div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div>
+				<div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div>
+				<div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div>
+				<div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div><div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div>
+				<div class="news_item">
+					<label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明</label>
+					<p>2018-12-10</p>
+				</div>
+			</div>
+			<!-- 新闻列表 e -->
+		</div>
+		<!--底部导航-->
+		<nav class="bar-footer">
+			<a href="index.html" class="bar-footer-item bar-footer-item-on">
+				<img src="image/icon-1-act.png" />
+				<label>首页</label>
+			</a>
+			<a href="about_us.html" class="bar-footer-item">
+				<img src="image/icon-2.png" />
+				<label>关于我们</label>
+			</a>
+			<a href="search.html" class="bar-footer-item">
+				<img class="big-item" src="image/icon-3.png" />
+				<label>站内搜索</label>
+			</a>
+			<a href="help_support.html"  class="bar-footer-item">
+				<img src="image/icon-4.png" />
+				<label>帮助支持</label>
+			</a>
+			<a class="bar-footer-item">
+				<img src="image/icon-5.png" />
+				<label>个人中心</label>
+			</a>
+		</nav>
+		<!--底部导航-->
+	</body>
+	<script>
+		var mySwiper = new Swiper('.swiper-container', {
+			autoplay: true,
+			loop: true,
+			pagination: {
+				el: '.swiper-pagination',
+			}
+		})
+	</script>
+
+</html>

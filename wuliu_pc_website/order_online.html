@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>网上下单</title>
+		<link rel="stylesheet" type="text/css" href="css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="css/bannerlist.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jQuery-jcMarquee.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bannerlist.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/track.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/koala.min.1.5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+	</head>
+	<style type="text/css">
+
+	</style>
+	<body>
+		<section>
+			<div class="top">
+				<!-- 顶部注册 s -->
+				<div class="topBar ">
+					<div class="mid clear cent ">
+						<div class="fr">
+							<div class="regist fl lineh30 font12">
+								<a href="/hydl/" class="colorf0">登录</a>
+								<a href="/member/">注册</a>
+							</div>
+							<div class="lang fl ">
+							</div>
+							<div class="lang fl " style="margin-top: 2px;">
+								<form action="/search.asp" method="post">
+									<input type="text" name="key">&nbsp;&nbsp;<input type="submit" name="search" value="搜索">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 顶部注册 e -->
+				<div class="topMain clear cent">
+					<a href="/" class="logo fl">
+						<img src="images/logo.png" alt="">
+					</a>
+					<i class="fl"></i>
+					<div class="navwrap font14 lineh30 fr">
+						<!-- 导航开始 -->
+						<!--include component.less #nav &底部主导航script-->
+						<div class="nav  fr" id="nav">
+							<ul class="clear">
+								<li>
+									<a href="#">出口物流</a>
+									<ul class="sub_nav2">
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>FBA头程</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>沃虎专线</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>国际快递</h3></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">增值业务</a>
+									<ul class="sub_nav2">
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>保险服务</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>包装耗材</h3></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">新闻中心</a>
+									<ul class="sub_nav2">
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>行业新闻</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>公司新闻</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>重要公告</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>燃油附加费</h3></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">关于我们</a>
+									<ul class="sub_nav2">
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>公司简介</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>联系我们</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>客服中心</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>人才招聘</h3></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">帮助支持</a>
+									<ul class="sub_nav5">
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>新手指南</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>常见问题</h3></a>
+										</li>
+										<li>
+											<a href=""><img src="images/gywm.png" alt="" width="160" height="90"></a>
+											<a href="">
+												<h3>下载中心</h3></a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- 导航结束 -->
+					</div>
+				</div>
+			</div>
+			<div class="ban position_r">
+			<div class="bannerWrap">
+				<div class="banner">
+					<ul>
+						<a href="" target="_blank">
+							<li style="background: url(images/2017121241232501.jpg)"></li>
+						</a>
+						<a href="" target="_blank">
+							<li style="background: url(images/2018033063639529.jpg)"></li>
+						</a>
+					</ul>
+					<div class="left-btn"></div>
+					<div class="right-btn"></div>
+					<div class="img-btn-list">
+
+					</div>
+				</div>
+				<!--banner e-->
+			</div>
+			<!-- 快递追踪 s-->
+			<div class="track cent position_a">
+				<div class="cent track_cent">
+					<div class="trackWrap position_r side-hide " id="side">
+						<form action="http://114.215.175.26/cgi-bin/GInfo.dll?" method="get" target="_blank">
+							<b>快件追踪</b>
+							<div class="textarea_wrap">
+								<input name="MfcISAPICommand" type="hidden" value="EmmisTrack">
+								<input name="w" type="hidden" value="hyeasy">
+								<input name="ntype" type="hidden" value="11100">
+								<textarea id="textarea" name="cno" cols="30" rows="5" placeholder="| 最多输入8个运单号,用Enter或斜杠/分隔"></textarea>
+							</div>
+							<button class="button fr color_f" title="跟踪查询" type="submit" value="追踪">追踪</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- 快递追踪 e-->
+		</div>
+		</section>
+		<div class="bodyWrap">
+			<div class="mainbody cent">
+				<div class="Breadcrumb">
+					<span>当前位置：</span>
+					<span>首页</span>
+					<span class="breadcrumb__separator">/</span>
+					<span>查询支持</span>
+					<span class="breadcrumb__separator">/</span>
+					<span>网上下单</span>
+				</div>
+				<div class="ov">
+					<div class="leftNav fl">
+						<div class="pageName">查询支持</div>
+						<ul>
+							<li><a href="">运费查询</a></li>
+							<li class="menu_on"><a href="">网上下单</a></li>
+							<li><a href="">快件追踪</a></li>
+							<li><a href="">留言反馈</a></li>
+						</ul>
+						<div class="pageQrcodes">
+							<div class="qrcode-item"></div>
+							<div class="qrcode-item"></div>
+						</div>
+					</div>
+					<div class="rightMain fr">
+						<div class="pageTitle">网上下单</div>
+						<div class="order-from">
+							<div class="order-from-flex">
+								<h1>寄件信息</h1>
+								<div class="order-form-item">
+									<label>预约人姓名:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>联系电话:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>取件联系人:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>联系电话:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>取件地址:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>付款方式:</label>
+									<div>
+										<input name="sendtype" type="radio" />月结
+										<input name="sendtype"  type="radio" />到付
+										<input name="sendtype"  type="radio" />现付
+									</div>
+								</div>
+								<div class="order-form-item">
+									<label>快件类型:</label>
+									<div>
+										<input name="type" type="radio" />文件
+										<input name="type"  type="radio" />包裹
+										<input name="type"  type="radio" />PAK
+									</div>
+								</div>
+							</div>
+							<div class="order-from-flex">
+								<h1>收件信息</h1>
+								<div class="order-form-item">
+									<label>收件人姓名:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>联系电话:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>国家:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>邮编:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>收件地址:</label>
+									<input />
+								</div>
+								<div class="order-form-item">
+									<label>备注:</label>
+									<input />
+								</div>
+							</div>
+						</div>
+						<div class="order-from-button">
+							<button>网上下单</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+				<div class="bottomMain cent">
+					<div class="f_floor clear fl">
+						<div class="bottomLogo">
+							<img src="images/logoa.png" />
+						</div>
+						<div style="font-size: 18px;color: #3e3a39;margin-bottom: 8px;padding-left: 14px;">客服热线</div>
+						<div style="font-size: 26px;color: #ff6100;padding-left: 14px;">0579-81531200</div>
+					</div>
+					<div class="f_floor clear fl">
+						<div class="bottom_menu">
+							<div class="bottom_menu_title">关于我们</div>
+							<ul>
+								<li>
+									<a href="#">公司简介</a>
+								</li>
+								<li>
+									<a href="#">联系我们</a>
+								</li>
+								<li>
+									<a href="#">客服中心</a>
+								</li>
+								<li>
+									<a href="#">人才招聘</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="f_floor clear fl">
+						<div class="bottom_menu">
+							<div class="bottom_menu_title">帮助支持</div>
+							<ul>
+								<li>
+									<a href="#">新手指南</a>
+								</li>
+								<li>
+									<a href="#">常见问题</a>
+								</li>
+								<li>
+									<a href="#">下载中心</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="f_floor clear fl">
+						<div class="bottom_shopinfo">
+							<ul>
+								<li>义乌市沃虎国际货运代理有限公司 </li>
+								<li>客服QQ : 2471036706</li>
+								<li>E-mail : vohooex@yeah.net</li>
+								<li>公司网址：www.vohooex.com </li>
+								<li>投诉：18606883930</li>
+								<li>地址：浙江省义乌市下王4区20栋1楼</li>
+							</ul>
+						</div>
+					</div>
+					<div class="f_floor clear fl">
+						<div class="qrocde">
+							<img src="images/qrcode.png" />
+							<p>扫一扫&nbsp;关注我</p>
+						</div>
+					</div>
+				</div>
+				<div class="s_floor_wrap">
+					<div class="s_floor clear">
+						<div class="r txt_cent">© 2016 www.smilexpress.com.cn .All rights reserved Power by DedeCms
+						</div>
+					</div>
+				</div>
+			</div>
+	
+	</body>
+	<script type="text/javascript">
+		bannerListFn(
+			$(".banner"),
+			$(".img-btn-list"),
+			$(".left-btn"),
+			$(".right-btn"),
+			6000,
+			true
+		);
+	</script>
+	<script type="text/javascript">
+		$(function() {
+			$("#nav>ul>li").hover(
+				function() {
+					$(this).css('width', '116px').children("ul").css("display", "block");
+					$(this).children('a').css('z-index', '240')
+				},
+				function() {
+					$(this).css('width', '118px').children("ul").css("display", "none");
+					$(this).children('a').css('z-index', '9')
+				}
+			)
+		})
+	</script>
+	<script type="text/javascript">
+		$("#textarea").bind({
+			focusin: function() {
+				console.log('1111111121111')
+				if($(this).val() == "" || isClick) {
+					var myHeight = $(".bannerWrap").height();
+					$(this).addClass("focus");
+					$("#side").removeClass("side-hide").height(myHeight);
+					/*$("#yto_phone").addClass("black");*/
+				}
+			},
+			focusout: function() {
+				if($(this).val() == "") {
+					$(this).removeClass("focus");
+					if(isClick) {
+						$("#side").addClass("side-hide").height(90);
+						/*$("#yto_phone").removeClass("black");*/
+					}
+				}
+			}
+		});
+	</script>
+	<script>
+		$(function() {
+			$('#ico_feeServ>ul>li').mouseover(
+				function() {
+					$(this).css('width', '306px').addClass('bg').children('div.ico').css('display', 'none').removeClass('feeServe_hover');
+					$(this).children('div.sub').css('display', 'block');
+					$(this).siblings().css('width', '101px').addClass('bg').children('div.ico').css('display', 'block').addClass('feeServe_hover');
+					$(this).siblings().children('div.sub').css('display', 'none');
+
+				}
+
+			)
+		})
+	</script>
+</html>

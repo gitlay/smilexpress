@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>查询支持-快件追踪结果</title>
+		<script src="js/mui.min.js"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+	</head>
+	<style type="text/css">
+		header img {
+			width: 100%;
+		}
+		
+		.qs_main {
+			background-color: #FFF;
+			padding: .2rem .2rem 1.5rem;
+		}
+		
+		.problem_info {
+			padding: .3rem;
+		}
+		
+		.problem_info h1 {
+			position: relative;
+			font-size: .34rem;
+			line-height: .46rem;
+			margin-bottom: .2rem;
+		}
+		
+		.problem_info label {
+			font-size: .24rem;
+			color: #999999;
+			display: block;
+			padding-bottom: .2rem;
+			border-bottom: 1px solid #c5c4c3;
+			margin-bottom: .2rem;
+		}
+		
+		.problem_info p {
+			line-height: .36rem;
+			text-indent: 2em;
+		}
+		
+		.select-row {
+			font-family: 'Helvetica Neue', Helvetica, sans-serif;
+			line-height: 1.1;
+			padding: 11px 15px;
+			display: block;
+		}
+		
+		.mui-btn-primary {
+			background-color: #FF6200;
+			border: 1px solid #FF6200;
+		}
+		
+		.mui-btn-blue.mui-active:enabled,
+		.mui-btn-blue:enabled:active,
+		.mui-btn-primary.mui-active:enabled,
+		.mui-btn-primary:enabled:active,
+		input[type=submit].mui-active:enabled,
+		input[type=submit]:enabled:active {
+			color: #fff;
+			border: 1px solid #FF6200;
+			background-color: #FF6200;
+		}
+		.query_result{
+			margin-top: .3rem;
+		}
+		.query_result h1{
+			font-size: .3rem;
+			color: #FF6200;
+		}
+		.query_result h1 span{
+			font-size: .24rem;
+			color: #777777;
+		}
+		.result_list{
+			margin-top: .3rem;
+			height: 4.3rem;
+			border: 1px solid #9fa0a0;
+		}
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="image/index-banner.png" />
+		</header>
+		<div class="qs_main">
+			<div class="query_result">
+				<h1>快件追踪结果: <span>发往：美国，包裹，重量：5公斤</span></h1>
+				<div class="result_list"></div>
+			</div>
+		</div>
+		<!--底部导航-->
+		<nav class="bar-footer">
+			<a href="index.html" class="bar-footer-item bar-footer-item-on">
+				<img src="image/icon-1-act.png" />
+				<label>首页</label>
+			</a>
+			<a href="about_us.html" class="bar-footer-item">
+				<img src="image/icon-2.png" />
+				<label>关于我们</label>
+			</a>
+			<a href="search.html" class="bar-footer-item">
+				<img class="big-item" src="image/icon-3.png" />
+				<label>站内搜索</label>
+			</a>
+			<a href="help_support.html"  class="bar-footer-item">
+				<img src="image/icon-4.png" />
+				<label>帮助支持</label>
+			</a>
+			<a href="#" class="bar-footer-item">
+				<img src="image/icon-5.png" />
+				<label>个人中心</label>
+			</a>
+		</nav>
+		<!--底部导航-->
+	</body>
+	<script type="text/javascript">
+		function chooseOne() {
+			var picker = new mui.PopPicker();
+			picker.setData([{
+				value: "first",
+				text: "中国"
+			}, {
+				value: "second",
+				text: "美国"
+			}, {
+				value: "third",
+				text: "日本"
+			}, {
+				value: "fourth",
+				text: "韩国"
+			}, {
+				value: "fifth",
+				text: "加拿大"
+			}])
+			picker.show(function(SelectedItem) {
+				console.log(SelectedItem[0].text)
+				$('#mudidi').text(SelectedItem[0].text)
+			})
+		}
+
+		function chooseTwo() {
+			var picker = new mui.PopPicker();
+			picker.setData([{
+				value: "first",
+				text: "包裹"
+			}, {
+				value: "second",
+				text: "包裹B"
+			}])
+			picker.show(function(SelectedItem) {
+				console.log(SelectedItem[0].text)
+				$('#kjlx').text(SelectedItem[0].text)
+			})
+		}
+	</script>
+
+</html>

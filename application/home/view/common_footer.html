@@ -1,46 +1,141 @@
-<!-- footer start here -->
-<footer>
-    <div class="row">
-        <div class="three columns mobile-two">
-            <img src="/static/home/images/logo2.png" alt="CLTPHP" class="img-left" />
-            <p class="copyright-text">
-                &copy;{$sys.copyright} <a href="http://www.cltphp.com/" style="color: #747373" rel="external" title="{$sys.title}">{$sys.title}</a><br>
-                <a href="http://www.miitbeian.gov.cn/" style="color: #747373" target="_blank" rel="nofollow">{$sys.bah}</a><br>
-            </p>
+<div class="bottom">
+    <div class="bottomMain cent">
+        <div class="f_floor clear fl">
+            <div class="bottomLogo">
+                <img src="images/logoa.png"/>
+            </div>
+            <div style="font-size: 18px;color: #3e3a39;margin-bottom: 8px;padding-left: 14px;">客服热线</div>
+            <div style="font-size: 26px;color: #ff6100;padding-left: 14px;">0579-81531200</div>
         </div>
-        <div class="three columns mobile-two">
-            <h5>联系我们</h5>
-            <ul>
-                <li class="address-icon"><a href="{$sys.url}" title="{$sys.title}">{$sys.title}</a></li>
-                <li class="qq-icon"><a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=ebcb5f6099570a3a1429036f42f787b9eea835fdbf6ded8eaee2a546855cce97"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="CLTPHP交流群0002" title="CLTPHP交流群0002"></a></li>
-                <li class="qq-icon">站长QQ号 : <a target="_blank" rel="nofollow" title="点击加好友" href="tencent://message/?uin=1109305987&Site=&Menu=yes">1109305987</a></li>
-                <li class="email-icon">Email : {$sys.email}</li>
-            </ul>
+        <div class="f_floor clear fl">
+            <div class="bottom_menu">
+                <div class="bottom_menu_title">关于我们</div>
+                <ul>
+                    <li>
+                        <a href="#">公司简介</a>
+                    </li>
+                    <li>
+                        <a href="#">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="#">客服中心</a>
+                    </li>
+                    <li>
+                        <a href="#">人才招聘</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="three columns mobile-two">
-            <h5>友情链接</h5>
-            <ul>
-                {volist name="linkList" id="vo"}
-                <li><a href="{$vo.url}" rel="external" title="{$vo.name}">{$vo.name}</a></li>
-                {/volist}
-                <li><a href="https://www.kancloud.cn/chichu/cltphp" target="_blank" rel="nofollow" title="CLTPHP操作开发手册">CLTPHP操作开发手册</a></li>
-            </ul>
+        <div class="f_floor clear fl">
+            <div class="bottom_menu">
+                <div class="bottom_menu_title">帮助支持</div>
+                <ul>
+                    <li>
+                        <a href="#">新手指南</a>
+                    </li>
+                    <li>
+                        <a href="#">常见问题</a>
+                    </li>
+                    <li>
+                        <a href="#">下载中心</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="three columns mobile-two">
-            <h5>扫码捐助</h5>
-            <div class="wxsq">
-                <img src="/static/home/images/wxsq.png" alt="CLTPHP微信二维码" title="CLTPHP微信二维码">
+        <div class="f_floor clear fl">
+            <div class="bottom_shopinfo">
+                <ul>
+                    <li>义乌市沃虎国际货运代理有限公司</li>
+                    <li>客服QQ : 2471036706</li>
+                    <li>E-mail : vohooex@yeah.net</li>
+                    <li>公司网址：www.vohooex.com</li>
+                    <li>投诉：18606883930</li>
+                    <li>地址：浙江省义乌市下王4区20栋1楼</li>
+                </ul>
+            </div>
+        </div>
+        <div class="f_floor clear fl">
+            <div class="qrocde">
+                <img src="images/qrcode.png"/>
+                <p>扫一扫&nbsp;关注我</p>
             </div>
         </div>
     </div>
-</footer>
-<!-- footer end here -->
-<script>
-    $('#noscript').remove();
-    jQuery(function($){
-        //external加上target="_blank"
-        $("a[rel*=external]").attr("target","_blank");
+    <div class="s_floor_wrap">
+        <div class="s_floor clear">
+            <div class="r txt_cent">© 2016 www.smilexpress.com.cn .All rights reserved Power by DedeCms
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+        },
     });
 </script>
-</body>
+<script type="text/javascript">
+    bannerListFn(
+        $(".banner"),
+        $(".img-btn-list"),
+        $(".left-btn"),
+        $(".right-btn"),
+        6000,
+        true
+    );
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#nav>ul>li").hover(
+            function () {
+                $(this).css('width', '116px').children("ul").css("display", "block");
+                $(this).children('a').css('z-index', '240')
+            },
+            function () {
+                $(this).css('width', '118px').children("ul").css("display", "none");
+                $(this).children('a').css('z-index', '9')
+            }
+        )
+    })
+</script>
+<script type="text/javascript">
+    $("#textarea").bind({
+        focusin: function () {
+
+            if ($(this).val() == "" || isClick) {
+                var myHeight = $(".bannerWrap").height();
+                $(this).addClass("focus");
+                $("#side").removeClass("side-hide").height(myHeight);
+                /*$("#yto_phone").addClass("black");*/
+            }
+        },
+        focusout: function () {
+            if ($(this).val() == "") {
+                $(this).removeClass("focus");
+                if (isClick) {
+                    $("#side").addClass("side-hide").height(90);
+                    /*$("#yto_phone").removeClass("black");*/
+                }
+            }
+        }
+    });
+</script>
+<script>
+    $(function () {
+        $('#ico_feeServ>ul>li').mouseover(
+            function () {
+                $(this).css('width', '306px').addClass('bg').children('div.ico').css('display', 'none').removeClass('feeServe_hover');
+                $(this).children('div.sub').css('display', 'block');
+                $(this).siblings().css('width', '101px').addClass('bg').children('div.ico').css('display', 'block').addClass('feeServe_hover');
+                $(this).siblings().children('div.sub').css('display', 'none');
+
+            }
+        )
+    })
+</script>
+
 </html>

@@ -1,0 +1,16 @@
+
+
+<div class="leftNav fl">
+    <div class="pageName">{$parentName}</div>
+    <ul>
+        {volist name="child" id="vo"}
+        <li {if condition="input('catId')==$vo['id']"} class="menu_on"{/if}>
+        <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] )}">  {$vo.catname}</a>
+        </li>
+        {/volist}
+    </ul>
+    <div class="pageQrcodes">
+        <div class="qrcode-item"></div>
+        <div class="qrcode-item"></div>
+    </div>
+</div>

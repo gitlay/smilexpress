@@ -1,0 +1,26 @@
+{include file="common/head"/}
+		<div class="bodyWrap">
+			<div class="mainbody cent">
+				{include file="common/position"/}
+				<div class="ov">
+					{include file="common/left"/}
+					<div class="rightMain fr">
+						<div class="pageTitle">{$title}</div>
+						<div class="pageWorkList">
+							{volist name="list" id="vo"}
+							<div class="pageWorkItem">
+								<div class="pageWorkTitle">
+									<p>{$vo.title}</p>
+								</div>
+								<div class="pageWorkInfo">
+									<p>职责</p>
+									{$vo.content}
+								</div>
+							</div>
+							{/volist}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{include file="common/footer"/}

@@ -1,0 +1,28 @@
+{include file="common/head"/}
+		<div class="bodyWrap">
+			<div class="mainbody cent">
+				{include file="common/position"/}
+				<div class="ov">
+					{include file="common/left"/}
+					<div class="rightMain fr">
+						<div class="pageTitle">{$title}</div>
+						<div class="pageAskInfo">
+							<p class="pageAskInfo-title">问：{$info.title}</p>
+							<div class="pageAskInfo-q">
+								{$info.content|raw}
+							</div>
+						</div>
+						<div class="pageAskList">
+							<div class="pageAskTitle">相关问题</div>
+							<ul>
+								{php} $catid = input("catId");{/php}
+								{clist db='article' id='vo' where='posid = 3 and catid=".$catid." ' limit='5'}
+								<li><a href="">问：{$vo.title}</a></li>
+								{/clist}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{include file="common/footer"/}

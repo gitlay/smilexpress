@@ -1,4 +1,4 @@
-<?php /*a:5:{s:63:"E:\phpStudy\WWW\express\application\home\view\page_contact.html";i:1545060198;s:62:"E:\phpStudy\WWW\express\application\home\view\common_head.html";i:1545058854;s:66:"E:\phpStudy\WWW\express\application\home\view\common_position.html";i:1545060789;s:62:"E:\phpStudy\WWW\express\application\home\view\common_left.html";i:1545060774;s:64:"E:\phpStudy\WWW\express\application\home\view\common_footer.html";i:1545059809;}*/ ?>
+<?php /*a:5:{s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\page_contact.html";i:1545126948;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_head.html";i:1545119620;s:82:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_position.html";i:1545119620;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_left.html";i:1545119620;s:80:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_footer.html";i:1545119620;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -242,6 +242,12 @@
     </div>
 </section>
 
+<style type="text/css">
+	#allmap{
+		width: 427.2px;
+		height: 280px;
+	}
+</style>
 		<div class="bodyWrap">
 			<div class="mainbody cent">
 				<div class="Breadcrumb">
@@ -270,17 +276,11 @@
     </div>
 </div>
 					<div class="rightMain fr">
-						<div class="pageTitle">联系我们</div>
+						<div class="pageTitle"><?php echo htmlentities($title); ?></div>
 						<div class="pageFlex">
 							<div class="lxwm_info">
-								<ul>
-								<li>义乌市沃虎国际货运代理有限公司 </li>
-								<li>客服QQ : 2471036706</li>
-								<li>E-mail : vohooex@yeah.net</li>
-								<li>公司网址：www.vohooex.com </li>
-								<li>投诉：18606883930</li>
-								<li>地址：浙江省义乌市下王4区20栋1楼</li>
-							</ul>
+
+								<?php echo $info['content']; ?>
 							</div>
 							<div id="allmap">
 								
@@ -431,6 +431,7 @@
 </script>
 
 </html>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=IY2W8f1UqdBvCygHYer6XiLYDj9xLLcA"></script>
 <script type="text/javascript">
     // 百度地图API功能
 

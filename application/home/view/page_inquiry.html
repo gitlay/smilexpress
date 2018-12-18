@@ -1,0 +1,75 @@
+{include file="common/head"/}
+		<div class="bodyWrap">
+			<div class="mainbody cent">
+				{include file="common/position"/}
+				<div class="ov">
+					{include file="common/left"/}
+					<div class="rightMain fr">
+						<div class="pageTitle">{$title}</div>
+						<div class="freight-from">
+							<div class="freight-from-line">
+								<div class="freight-from-item">
+									<label class="frs-label">目的地/Destination：</label>
+									<select class="address-select">
+									  <option value ="beijing">北京</option>
+									  <option value ="shanghai">上海</option>
+									  <option value="fuzhou">福州</option>
+									  <option value="ningbo">宁波</option>
+									</select>
+								</div>
+							</div>
+							<div class="freight-from-line">
+								<div class="freight-from-item">
+									<label class="frs-label">快件重量/Express weight：</label>
+									<input class="freight-from-item-kg" type="" name="" value="" />
+									<span>kg</span>
+								</div>
+								<div class="freight-from-item">
+									<label>快件类型/Express type：</label>
+									<select class="type-select">
+									  <option value ="1">包裹</option>
+									  <option value ="2">快递</option>
+									  <option value="3">PAK</option>
+									</select>
+								</div>
+							</div>
+							<div class="freight-from-line">
+								<div class="freight-from-item">
+									<label class="frs-label">快件体积/Express volume：</label>
+								</div>
+							</div>
+							<div class="freight-from-line">
+								<div class="freight-from-item">
+									<label class="frs-label">长度/length：</label>
+									<input class="freight-from-item-volume" type="" name="" value="" />
+									<span>cm</span>
+								</div>
+								<div class="freight-from-item">
+									<label>宽度/width：</label>
+									<input class="freight-from-item-volume" type="" name="" value="" />
+									<span>cm</span>
+								</div>
+								<div class="freight-from-item">
+									<label>高度/height：</label>
+									<input class="freight-from-item-volume" type="" name="" value="" />
+									<span>cm</span>
+								</div>
+							</div>
+							<div class="freight-from-line">
+								<div class="freight-from-item">
+									<label class="frs-label"></label>
+									<button class="freight-from-item-button">查询</button>
+								</div>
+							</div>
+						</div>
+						<div class="select-results">
+							<h1>查询结果:<span>国家：？ 重量：？kg  类型：？ 共有？条报价</span></h1>
+							<div class="q-results">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{include file="common/footer"/}

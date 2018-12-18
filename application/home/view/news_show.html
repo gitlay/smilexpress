@@ -1,0 +1,36 @@
+{include file="common/head"/}
+		<div class="bodyWrap">
+			<div class="mainbody cent">
+				{include file="common/position"/}
+				<div class="ov">
+					{include file="common/left"/}
+					<div class="rightMain fr">
+						<div class="pageNewsTop">
+							<h1>{$info.title}</h1>
+							<p><span>发布时间：{:toDate($info['createtime'],'Y-m-d H:i')}   编辑：{$info.username}   文章来源：{$info.copyfrom}</span></p>
+						</div>
+						<div class="pageAskInfo">
+							<div class="pageAskInfo-q">
+								{$info.content|raw}
+							</div>
+						</div>
+						<div class="pageAskList">
+							<div class="pageAskTitle">相关新闻</div>
+							<div class="pageNewsList">
+							<ul>
+								{php} $catid = input("catId");{/php}
+								{clist db='article' id='vo' where='posid = 2 and catid=".$catid." ' limit='5'}
+								<li>
+									<label>{$vo.title}</label>
+									<p>{:toDate($vo['createtime'],'Y-m-d')}</p>
+								</li>
+								{/clist}
+							</ul>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{include file="common/footer"/}

@@ -71,11 +71,11 @@
 
 </body>
 <script type="text/javascript">
-    var swiper = new Swiper('.swiper-container', {
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true,
-        },
+    var swiper = new Swiper(".swiper-container", {
+            pagination: {
+                el:".swiper-pagination",
+                dynamicBullets: true,
+            },
     });
 </script>
 <script type="text/javascript">
@@ -92,12 +92,12 @@
     $(function () {
         $("#nav>ul>li").hover(
             function () {
-                $(this).css('width', '116px').children("ul").css("display", "block");
-                $(this).children('a').css('z-index', '240')
+                $( this).css("width", "116px").children("ul").css("display", "block");
+                $( this).children("a").css("z-index", "240");
             },
             function () {
-                $(this).css('width', '118px').children("ul").css("display", "none");
-                $(this).children('a').css('z-index', '9')
+                $( this).css("width", "118px").children("ul").css("display", "none");
+                $( this).children("a").css("z-index", "9")
             }
         )
     })
@@ -126,12 +126,12 @@
 </script>
 <script>
     $(function () {
-        $('#ico_feeServ>ul>li').mouseover(
+        $("#ico_feeServ>ul>li").mouseover(
             function () {
-                $(this).css('width', '306px').addClass('bg').children('div.ico').css('display', 'none').removeClass('feeServe_hover');
-                $(this).children('div.sub').css('display', 'block');
-                $(this).siblings().css('width', '101px').addClass('bg').children('div.ico').css('display', 'block').addClass('feeServe_hover');
-                $(this).siblings().children('div.sub').css('display', 'none');
+                $(this).css("width", "306px").addClass("bg").children("div.ico").css("display", "none").removeClass("feeServe_hover");
+                $(this).children("div.sub").css("display", "block");
+                $(this).siblings().css("width", "101px").addClass("bg").children("div.ico").css("display", "block").addClass("feeServe_hover");
+                $(this).siblings().children("div.sub").css("display", "none");
 
             }
         )

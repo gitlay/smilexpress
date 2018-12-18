@@ -11,15 +11,15 @@
 								{volist name="list" id="vo"}
 								<li>
 									<a href="{:url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}"> <label>{$vo.title}</label>
-										<p>{:toDate($vo['createtime'],'Y-m-d)}</p>
+										<p>{:toDate($vo["createtime"],'Y-m-d')}</p>
 									</a>
 								</li>
 								{/volist}
 							</ul>
 						</div>
-						<div class="pagination">
+
 							{$page|raw}
-						</div>
+
 					</div>
 				</div>
 			</div>

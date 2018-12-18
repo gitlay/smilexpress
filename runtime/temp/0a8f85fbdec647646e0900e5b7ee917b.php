@@ -1,4 +1,4 @@
-<?php /*a:5:{s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\page_service.html";i:1545127081;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_head.html";i:1545119620;s:82:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_position.html";i:1545119620;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_left.html";i:1545119620;s:80:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_footer.html";i:1545119620;}*/ ?>
+<?php /*a:5:{s:63:"E:\phpStudy\WWW\express\application\home\view\article_show.html";i:1545143435;s:62:"E:\phpStudy\WWW\express\application\home\view\common_head.html";i:1545058854;s:66:"E:\phpStudy\WWW\express\application\home\view\common_position.html";i:1545060789;s:62:"E:\phpStudy\WWW\express\application\home\view\common_left.html";i:1545060774;s:64:"E:\phpStudy\WWW\express\application\home\view\common_footer.html";i:1545145623;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -270,15 +270,38 @@
     </div>
 </div>
 					<div class="rightMain fr">
-						<div class="pageTitle"><?php echo htmlentities($title); ?></div>
-						<div class="pageFlex">
-							<?php echo $info['content']; ?>
+						<div class="pageNewsTop">
+							<h1><?php echo htmlentities($info['title']); ?></h1>
+							<p><span>发布时间：<?php echo toDate($info['createtime'],'Y-m-d H:i'); ?>   编辑：<?php echo htmlentities($info['username']); ?>   文章来源：<?php echo htmlentities($info['copyfrom']); ?></span></p>
 						</div>
-
+						<div class="pageAskInfo">
+							<div class="pageAskInfo-q">
+								<?php echo $info['content']; ?>
+							</div>
+						</div>
+						<div class="pageAskList">
+							<div class="pageAskTitle">相关新闻</div>
+							<div class="pageNewsList">
+							<ul>
+								<?php  $catid = input("catId"); $result = db("article")->alias("a")->join("category c"," a.catid = c.id","left")
+            ->where("posid = 2 and catid=".$catid."  and (status = 1 or (status = 0 and createtime <1545146358))")
+            ->field("a.*,c.catdir,c.catname")
+            ->limit(5)
+            ->order(" a.sort asc,a.createtime desc,a.id desc")
+            ->select();if($result){foreach ($result as $k=>$vo):$result[$k]["time"]= toDate($vo["createtime"],"Y-m-d");$result[$k]["thumb"]= $vo["thumb"]?$vo["thumb"]:"";?><?php endforeach; foreach ($result as $k=>$vo):?>
+								<li>
+									<label><?php echo htmlentities($vo['title']); ?></label>
+									<p><?php echo toDate($vo['createtime'],'Y-m-d'); ?></p>
+								</li>
+								<?php endforeach; }else{echo "<div class='fly-none'>没有相关数据</div>";}?>
+							</ul>
+						</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
 <div class="bottom">
     <div class="bottomMain cent">
         <div class="f_floor clear fl">
@@ -352,11 +375,11 @@
 
 </body>
 <script type="text/javascript">
-    var swiper = new Swiper('.swiper-container', {
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true,
-        },
+    var swiper = new Swiper(".swiper-container", {
+            pagination: {
+                el:".swiper-pagination",
+                dynamicBullets: true,
+            },
     });
 </script>
 <script type="text/javascript">
@@ -373,12 +396,12 @@
     $(function () {
         $("#nav>ul>li").hover(
             function () {
-                $(this).css('width', '116px').children("ul").css("display", "block");
-                $(this).children('a').css('z-index', '240')
+                $( this).css("width", "116px").children("ul").css("display", "block");
+                $( this).children("a").css("z-index", "240");
             },
             function () {
-                $(this).css('width', '118px').children("ul").css("display", "none");
-                $(this).children('a').css('z-index', '9')
+                $( this).css("width", "118px").children("ul").css("display", "none");
+                $( this).children("a").css("z-index", "9")
             }
         )
     })
@@ -407,12 +430,12 @@
 </script>
 <script>
     $(function () {
-        $('#ico_feeServ>ul>li').mouseover(
+        $("#ico_feeServ>ul>li").mouseover(
             function () {
-                $(this).css('width', '306px').addClass('bg').children('div.ico').css('display', 'none').removeClass('feeServe_hover');
-                $(this).children('div.sub').css('display', 'block');
-                $(this).siblings().css('width', '101px').addClass('bg').children('div.ico').css('display', 'block').addClass('feeServe_hover');
-                $(this).siblings().children('div.sub').css('display', 'none');
+                $(this).css("width", "306px").addClass("bg").children("div.ico").css("display", "none").removeClass("feeServe_hover");
+                $(this).children("div.sub").css("display", "block");
+                $(this).siblings().css("width", "101px").addClass("bg").children("div.ico").css("display", "block").addClass("feeServe_hover");
+                $(this).siblings().children("div.sub").css("display", "none");
 
             }
         )
@@ -420,4 +443,3 @@
 </script>
 
 </html>
-

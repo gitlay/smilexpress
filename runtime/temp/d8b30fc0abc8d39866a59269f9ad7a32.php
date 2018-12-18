@@ -1,4 +1,4 @@
-<?php /*a:3:{s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\index_index.html";i:1545119620;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_head.html";i:1545119620;s:80:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_footer.html";i:1545119620;}*/ ?>
+<?php /*a:5:{s:63:"E:\phpStudy\WWW\express\application\home\view\page_service.html";i:1545148234;s:62:"E:\phpStudy\WWW\express\application\home\view\common_head.html";i:1545058854;s:66:"E:\phpStudy\WWW\express\application\home\view\common_position.html";i:1545146822;s:62:"E:\phpStudy\WWW\express\application\home\view\common_left.html";i:1545060774;s:64:"E:\phpStudy\WWW\express\application\home\view\common_footer.html";i:1545145623;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -242,151 +242,61 @@
     </div>
 </section>
 
-<div class="bodyWrap">
-    <!-- 主体区 s-->
-    <div class="mainbody cent">
-        <div class="tongzhi lineh40 ">
-            <!-- listScroll-x|y #5 s-->
-            <!-- include jcMarquee.js & component.less #5 &底部滚动通知script -->
-            <div id="Marquee_x" class="ov">
-                <ul style="width: 1000%;">
-                    <li class="">
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
-                        </div>
+<style type="text/css">
+	.pageAskInfo-q h1 {
+		color: #ff6200;
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
 
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
-                        </div>
+	.pageAskInfo-q p {
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
 
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
-                        </div>
-                    </li>
-                    <li class="clone">
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
-                        </div>
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
-                        </div>
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- listScroll-x|y #5 e-->
-        </div>
-        <div class="">
-            <div class="two-wrap ckwl">
-                <div class="two-wrap-item">
-                    <h1>FBA头程</h1>
-                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
-                    <div class="two-wrap-item-img"></div>
-                </div>
-                <div class="two-wrap-item">
-                    <h1>沃虎专线</h1>
-                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
-                    <div class="two-wrap-item-img"></div>
-                </div>
-                <div class="two-wrap-item">
-                    <h1>国际快递</h1>
-                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
-                    <div class="two-wrap-item-img"></div>
-                </div>
-            </div>
-            <div class="two-wrap zzyw">
-                <div class="two-wrap-item">
-                    <h1>保险服务</h1>
-                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
-                    <div class="two-wrap-item-img"></div>
-                </div>
-                <div class="two-wrap-item">
-                    <h1>包装耗材</h1>
-                    <p>我们可以提供印度、日本、欧洲、美国的FBA转运服务，是三态速递新增的一项服务，支持多种发货方式。</p>
-                    <div class="two-wrap-item-img"></div>
-                </div>
-            </div>
-        </div>
-        <div class="mainNews">
-            <div class="mainNewsLeft fl">
-                <div class="main-news-menu">
-                    <div class="main-news-menu-item main-news-menu-item-on">行业新闻</div>
-                    <div class="main-news-menu-item">公司新闻</div>
-                    <div class="main-news-menu-item">重要公告</div>
-                    <div class="main-news-menu-item">燃油附加费</div>
-                    <div class="main-news-menu-item">常见问题</div>
-                </div>
-                <div class="main-news-list">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
-                                <p>2018-11-06</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
-                                <p>2018-11-06</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
-                                <p>2018-11-06</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
-                                <p>2018-11-06</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
-                                <p>2018-11-06</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
-                                <p>2018-11-06</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <label>习近平出席进博会开幕式并发表主旨演讲：开放已经成为当代中国的鲜明标识 </label>
-                                <p>2018-11-06</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mainNewsRight fr">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="https://logzm.com/upload/2018041139100825.jpg"/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://logzm.com/upload/2018041139100825.jpg"/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://logzm.com/upload/2018041139100825.jpg"/>
-                        </div>
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </div>
+	.pageAskInfo-q img {
+		width: 100%;
+	}
+</style>
+		<div class="bodyWrap">
+			<div class="mainbody cent">
+				<div class="Breadcrumb">
+    <span>当前位置：</span>
+    <span><a href="/">首页</a></span>
+    <span class="breadcrumb__separator">/</span>
+    <span><a href="<?php echo url('home/'.MODULE_NAME.'/index',array('catId'=>$parent['id'])); ?>"><?php echo htmlentities($parentName); ?></a></span>
+    <span class="breadcrumb__separator">/</span>
+    <span><a href="#"><?php echo htmlentities($title); ?></a></span>
+</div>
+				<div class="ov">
+					
+
+<div class="leftNav fl">
+    <div class="pageName"><?php echo htmlentities($parentName); ?></div>
+    <ul>
+        <?php if(is_array($child) || $child instanceof \think\Collection || $child instanceof \think\Paginator): $i = 0; $__LIST__ = $child;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+        <li <?php if(input('catId')==$vo['id']): ?> class="menu_on"<?php endif; ?>>
+        <a href="<?php echo url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] ); ?>">  <?php echo htmlentities($vo['catname']); ?></a>
+        </li>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
+    </ul>
+    <div class="pageQrcodes">
+        <div class="qrcode-item"></div>
+        <div class="qrcode-item"></div>
     </div>
-    <!-- 主体区 e-->
-
-    <div class="bottom">
+</div>
+					<div class="rightMain fr">
+						<div class="pageTitle"><?php echo htmlentities($info['title']); ?></div>
+						<div class="pageAskInfo">
+							<div class="pageAskInfo-q">
+							<?php echo $info['content']; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="bottom">
     <div class="bottomMain cent">
         <div class="f_floor clear fl">
             <div class="bottomLogo">
@@ -459,11 +369,11 @@
 
 </body>
 <script type="text/javascript">
-    var swiper = new Swiper('.swiper-container', {
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true,
-        },
+    var swiper = new Swiper(".swiper-container", {
+            pagination: {
+                el:".swiper-pagination",
+                dynamicBullets: true,
+            },
     });
 </script>
 <script type="text/javascript">
@@ -480,12 +390,12 @@
     $(function () {
         $("#nav>ul>li").hover(
             function () {
-                $(this).css('width', '116px').children("ul").css("display", "block");
-                $(this).children('a').css('z-index', '240')
+                $( this).css("width", "116px").children("ul").css("display", "block");
+                $( this).children("a").css("z-index", "240");
             },
             function () {
-                $(this).css('width', '118px').children("ul").css("display", "none");
-                $(this).children('a').css('z-index', '9')
+                $( this).css("width", "118px").children("ul").css("display", "none");
+                $( this).children("a").css("z-index", "9")
             }
         )
     })
@@ -514,12 +424,12 @@
 </script>
 <script>
     $(function () {
-        $('#ico_feeServ>ul>li').mouseover(
+        $("#ico_feeServ>ul>li").mouseover(
             function () {
-                $(this).css('width', '306px').addClass('bg').children('div.ico').css('display', 'none').removeClass('feeServe_hover');
-                $(this).children('div.sub').css('display', 'block');
-                $(this).siblings().css('width', '101px').addClass('bg').children('div.ico').css('display', 'block').addClass('feeServe_hover');
-                $(this).siblings().children('div.sub').css('display', 'none');
+                $(this).css("width", "306px").addClass("bg").children("div.ico").css("display", "none").removeClass("feeServe_hover");
+                $(this).children("div.sub").css("display", "block");
+                $(this).siblings().css("width", "101px").addClass("bg").children("div.ico").css("display", "block").addClass("feeServe_hover");
+                $(this).siblings().children("div.sub").css("display", "none");
 
             }
         )

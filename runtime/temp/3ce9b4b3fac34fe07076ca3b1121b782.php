@@ -1,4 +1,4 @@
-<?php /*a:5:{s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\page_company.html";i:1545119620;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_head.html";i:1545119620;s:82:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_position.html";i:1545119620;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_left.html";i:1545119620;s:80:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_footer.html";i:1545119620;}*/ ?>
+<?php /*a:5:{s:63:"E:\phpStudy\WWW\express\application\home\view\page_company.html";i:1545060144;s:62:"E:\phpStudy\WWW\express\application\home\view\common_head.html";i:1545058854;s:66:"E:\phpStudy\WWW\express\application\home\view\common_position.html";i:1545146822;s:62:"E:\phpStudy\WWW\express\application\home\view\common_left.html";i:1545060774;s:64:"E:\phpStudy\WWW\express\application\home\view\common_footer.html";i:1545145623;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -250,7 +250,7 @@
     <span class="breadcrumb__separator">/</span>
     <span><a href="<?php echo url('home/'.MODULE_NAME.'/index',array('catId'=>$parent['id'])); ?>"><?php echo htmlentities($parentName); ?></a></span>
     <span class="breadcrumb__separator">/</span>
-    <span><a href="#"><?php echo htmlentities($info['title']); ?></a></span>
+    <span><a href="#"><?php echo htmlentities($title); ?></a></span>
 </div>
 				<div class="ov">
 					
@@ -351,11 +351,11 @@
 
 </body>
 <script type="text/javascript">
-    var swiper = new Swiper('.swiper-container', {
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true,
-        },
+    var swiper = new Swiper(".swiper-container", {
+            pagination: {
+                el:".swiper-pagination",
+                dynamicBullets: true,
+            },
     });
 </script>
 <script type="text/javascript">
@@ -372,12 +372,12 @@
     $(function () {
         $("#nav>ul>li").hover(
             function () {
-                $(this).css('width', '116px').children("ul").css("display", "block");
-                $(this).children('a').css('z-index', '240')
+                $( this).css("width", "116px").children("ul").css("display", "block");
+                $( this).children("a").css("z-index", "240");
             },
             function () {
-                $(this).css('width', '118px').children("ul").css("display", "none");
-                $(this).children('a').css('z-index', '9')
+                $( this).css("width", "118px").children("ul").css("display", "none");
+                $( this).children("a").css("z-index", "9")
             }
         )
     })
@@ -406,12 +406,12 @@
 </script>
 <script>
     $(function () {
-        $('#ico_feeServ>ul>li').mouseover(
+        $("#ico_feeServ>ul>li").mouseover(
             function () {
-                $(this).css('width', '306px').addClass('bg').children('div.ico').css('display', 'none').removeClass('feeServe_hover');
-                $(this).children('div.sub').css('display', 'block');
-                $(this).siblings().css('width', '101px').addClass('bg').children('div.ico').css('display', 'block').addClass('feeServe_hover');
-                $(this).siblings().children('div.sub').css('display', 'none');
+                $(this).css("width", "306px").addClass("bg").children("div.ico").css("display", "none").removeClass("feeServe_hover");
+                $(this).children("div.sub").css("display", "block");
+                $(this).siblings().css("width", "101px").addClass("bg").children("div.ico").css("display", "block").addClass("feeServe_hover");
+                $(this).siblings().children("div.sub").css("display", "none");
 
             }
         )

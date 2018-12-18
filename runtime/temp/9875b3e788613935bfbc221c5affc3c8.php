@@ -1,4 +1,4 @@
-<?php /*a:5:{s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\page_contact.html";i:1545126948;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_head.html";i:1545119620;s:82:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_position.html";i:1545119620;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_left.html";i:1545119620;s:80:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_footer.html";i:1545119620;}*/ ?>
+<?php /*a:5:{s:63:"E:\phpStudy\WWW\express\application\home\view\article_list.html";i:1545147597;s:62:"E:\phpStudy\WWW\express\application\home\view\common_head.html";i:1545058854;s:66:"E:\phpStudy\WWW\express\application\home\view\common_position.html";i:1545146822;s:62:"E:\phpStudy\WWW\express\application\home\view\common_left.html";i:1545060774;s:64:"E:\phpStudy\WWW\express\application\home\view\common_footer.html";i:1545145623;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -242,12 +242,6 @@
     </div>
 </section>
 
-<style type="text/css">
-	#allmap{
-		width: 427.2px;
-		height: 280px;
-	}
-</style>
 		<div class="bodyWrap">
 			<div class="mainbody cent">
 				<div class="Breadcrumb">
@@ -256,7 +250,7 @@
     <span class="breadcrumb__separator">/</span>
     <span><a href="<?php echo url('home/'.MODULE_NAME.'/index',array('catId'=>$parent['id'])); ?>"><?php echo htmlentities($parentName); ?></a></span>
     <span class="breadcrumb__separator">/</span>
-    <span><a href="#"><?php echo htmlentities($info['title']); ?></a></span>
+    <span><a href="#"><?php echo htmlentities($title); ?></a></span>
 </div>
 				<div class="ov">
 					
@@ -277,15 +271,20 @@
 </div>
 					<div class="rightMain fr">
 						<div class="pageTitle"><?php echo htmlentities($title); ?></div>
-						<div class="pageFlex">
-							<div class="lxwm_info">
-
-								<?php echo $info['content']; ?>
-							</div>
-							<div id="allmap">
-								
-							</div>
+						<div class="pageNewsList">
+							<ul>
+								<?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+								<li>
+									<a href="<?php echo url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid'])); ?>"> <label><?php echo htmlentities($vo['title']); ?></label>
+										<p><?php echo toDate($vo["createtime"],'Y-m-d'); ?></p>
+									</a>
+								</li>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
+							</ul>
 						</div>
+
+							<?php echo $page; ?>
+
 					</div>
 				</div>
 			</div>
@@ -363,11 +362,11 @@
 
 </body>
 <script type="text/javascript">
-    var swiper = new Swiper('.swiper-container', {
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true,
-        },
+    var swiper = new Swiper(".swiper-container", {
+            pagination: {
+                el:".swiper-pagination",
+                dynamicBullets: true,
+            },
     });
 </script>
 <script type="text/javascript">
@@ -384,12 +383,12 @@
     $(function () {
         $("#nav>ul>li").hover(
             function () {
-                $(this).css('width', '116px').children("ul").css("display", "block");
-                $(this).children('a').css('z-index', '240')
+                $( this).css("width", "116px").children("ul").css("display", "block");
+                $( this).children("a").css("z-index", "240");
             },
             function () {
-                $(this).css('width', '118px').children("ul").css("display", "none");
-                $(this).children('a').css('z-index', '9')
+                $( this).css("width", "118px").children("ul").css("display", "none");
+                $( this).children("a").css("z-index", "9")
             }
         )
     })
@@ -418,12 +417,12 @@
 </script>
 <script>
     $(function () {
-        $('#ico_feeServ>ul>li').mouseover(
+        $("#ico_feeServ>ul>li").mouseover(
             function () {
-                $(this).css('width', '306px').addClass('bg').children('div.ico').css('display', 'none').removeClass('feeServe_hover');
-                $(this).children('div.sub').css('display', 'block');
-                $(this).siblings().css('width', '101px').addClass('bg').children('div.ico').css('display', 'block').addClass('feeServe_hover');
-                $(this).siblings().children('div.sub').css('display', 'none');
+                $(this).css("width", "306px").addClass("bg").children("div.ico").css("display", "none").removeClass("feeServe_hover");
+                $(this).children("div.sub").css("display", "block");
+                $(this).siblings().css("width", "101px").addClass("bg").children("div.ico").css("display", "block").addClass("feeServe_hover");
+                $(this).siblings().children("div.sub").css("display", "none");
 
             }
         )
@@ -431,18 +430,3 @@
 </script>
 
 </html>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=IY2W8f1UqdBvCygHYer6XiLYDj9xLLcA"></script>
-<script type="text/javascript">
-    // 百度地图API功能
-
-    var map = new BMap.Map("allmap");    // 创建Map实例
-    map.centerAndZoom(new BMap.Point(120.133095,29.317717), 16);  // 初始化地图,设置中心点坐标和地图级别
-    //添加地图类型控件
-    map.addControl(new BMap.MapTypeControl({
-        mapTypes:[
-            BMAP_NORMAL_MAP,
-            BMAP_HYBRID_MAP
-        ]}));
-    map.setCurrentCity("金华市");          // 设置地图显示的城市 此项是必须设置的
-    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-</script>

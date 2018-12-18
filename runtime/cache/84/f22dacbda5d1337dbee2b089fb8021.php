@@ -9,13 +9,11 @@ think_serialize:a:15:{s:5:"catid";a:18:{s:2:"id";i:7;s:8:"moduleid";i:2;s:5:"fie
   'default' => '',
   'ispassword' => '0',
   'fieldtype' => 'varchar',
-)";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:3;s:6:"status";i:1;s:8:"issystem";i:1;}s:11:"description";a:18:{s:2:"id";i:10;s:8:"moduleid";i:2;s:5:"field";s:11:"description";s:4:"name";s:9:"SEO简介";s:4:"tips";s:0:"";s:8:"required";i:0;s:9:"minlength";i:0;s:9:"maxlength";i:0;s:7:"pattern";s:0:"";s:8:"errormsg";s:0:"";s:5:"class";s:0:"";s:4:"type";s:8:"textarea";s:5:"setup";s:94:"array (
-  'fieldtype' => 'mediumtext',
-  'rows' => '4',
-  'cols' => '55',
+)";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:3;s:6:"status";i:1;s:8:"issystem";i:1;}s:11:"description";a:18:{s:2:"id";i:10;s:8:"moduleid";i:2;s:5:"field";s:11:"description";s:4:"name";s:9:"SEO简介";s:4:"tips";s:0:"";s:8:"required";i:0;s:9:"minlength";i:0;s:9:"maxlength";i:0;s:7:"pattern";s:6:"defaul";s:8:"errormsg";s:0:"";s:5:"class";s:11:"description";s:4:"type";s:8:"textarea";s:5:"setup";s:53:"array (
+  'fieldtype' => 'text',
   'default' => '',
-)";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:4;s:6:"status";i:1;s:8:"issystem";i:1;}s:7:"content";a:18:{s:2:"id";i:11;s:8:"moduleid";i:2;s:5:"field";s:7:"content";s:4:"name";s:6:"内容";s:4:"tips";s:0:"";s:8:"required";i:0;s:9:"minlength";i:0;s:9:"maxlength";i:0;s:7:"pattern";s:6:"defaul";s:8:"errormsg";s:0:"";s:5:"class";s:7:"content";s:4:"type";s:6:"editor";s:5:"setup";s:36:"array (
-  'edittype' => 'UEditor',
+)";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:4;s:6:"status";i:1;s:8:"issystem";i:1;}s:7:"content";a:18:{s:2:"id";i:11;s:8:"moduleid";i:2;s:5:"field";s:7:"content";s:4:"name";s:6:"内容";s:4:"tips";s:0:"";s:8:"required";i:0;s:9:"minlength";i:0;s:9:"maxlength";i:0;s:7:"pattern";s:6:"defaul";s:8:"errormsg";s:0:"";s:5:"class";s:7:"content";s:4:"type";s:6:"editor";s:5:"setup";s:37:"array (
+  'edittype' => 'nkeditor',
 )";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:5;s:6:"status";i:1;s:8:"issystem";i:1;}s:10:"createtime";a:18:{s:2:"id";i:12;s:8:"moduleid";i:2;s:5:"field";s:10:"createtime";s:4:"name";s:12:"发布时间";s:4:"tips";s:0:"";s:8:"required";i:1;s:9:"minlength";i:0;s:9:"maxlength";i:0;s:7:"pattern";s:4:"date";s:8:"errormsg";s:0:"";s:5:"class";s:10:"createtime";s:4:"type";s:8:"datetime";s:5:"setup";s:0:"";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:6;s:6:"status";i:1;s:8:"issystem";i:1;}s:6:"status";a:18:{s:2:"id";i:19;s:8:"moduleid";i:2;s:5:"field";s:6:"status";s:4:"name";s:6:"状态";s:4:"tips";s:0:"";s:8:"required";i:0;s:9:"minlength";i:0;s:9:"maxlength";i:0;s:7:"pattern";s:6:"defaul";s:8:"errormsg";s:0:"";s:5:"class";s:6:"status";s:4:"type";s:5:"radio";s:5:"setup";s:122:"array (
   'options' => '发布|1
 定时发布|2',

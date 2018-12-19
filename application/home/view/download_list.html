@@ -13,6 +13,7 @@
 								{/volist}
 							</ul>
 						</div>
+
 						<div class="pagination">
 							{$page|raw}
 						</div>
@@ -20,4 +21,12 @@
 				</div>
 			</div>
 		</div>
+
+<script>
+	$('.download li').click(function(){
+		var url = $(this).children('a').attr('href');
+		window.location.href = url;
+
+	})
+</script>
 {include file="common/footer"/}

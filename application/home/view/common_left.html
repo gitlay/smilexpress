@@ -5,7 +5,7 @@
     <ul>
         {volist name="child" id="vo"}
         <li {if condition="input('catId')==$vo['id']"} class="menu_on"{/if}>
-        <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] )}">  {$vo.catname}</a>
+        <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] )}">{$vo.catname}</a>
         </li>
         {/volist}
     </ul>

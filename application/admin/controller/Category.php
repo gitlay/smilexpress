@@ -286,20 +286,23 @@ class Category extends Common
 
         if($modules != 'page'){
             $fields = cache($modulesId.'_Field');
-            $fieldse=array();
-            foreach ($fields as $k=>$v){
-                $fieldse[] = $k;
+            if($fields){
+                $fieldse=array();
+                foreach ($fields as $k=>$v){
+                    $fieldse[] = $k;
+                }
+                if(in_array('catid',$fieldse)){
+                    $count = $module->where('catid','in',$arrchildid)->count();
+                }else{
+                    $count = $module->count();
+                }
+                if($count){
+                    $result['info'] = '请先删除该栏目下所有数据!';
+                    $result['status'] = 0;
+                    return $result;
+                }
             }
-            if(in_array('catid',$fieldse)){
-                $count = $module->where('catid','in',$arrchildid)->count();
-            }else{
-                $count = $module->count();
-            }
-            if($count){
-                $result['info'] = '请先删除该栏目下所有数据!';
-                $result['status'] = 0;
-                return $result;
-            }
+
         }
         $pid = $this->categorys[$catid]['parentid'];
 

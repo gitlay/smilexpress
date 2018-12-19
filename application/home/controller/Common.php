@@ -98,6 +98,39 @@ class Common extends Controller{
             $job[$k]['info'] = Db::name('page')->where(['id'=>$v['id']])->find();
         }
         $this->assign('job', $job);
+
+        $about = $this->getChildCategory(2);
+        $this->assign('about',$about);
+
+        $help = $this->getChildCategory(40);
+        $this->assign('help',$help);
+    }
+
+    public function getChildCategory($parent_id,$with_content=0){
+        $child = Db::name('category')->where('parentid',$parent_id)->order('sort')->select();
+        if ($with_content==0){
+            return  $child;
+        }
+        $model = db('article');
+        foreach ($child as $k=>$v){
+            // echo $v['id'];
+            $child[$k]['content'] = $this->getContent($v['id'],$model);
+        }
+
+        return  $child;
+    }
+
+    public function getContent($cat_id,$model){
+        $arrchildid = db('category')->where(['id'=>$cat_id])->value('arrchildid');
+        $map = ' ';
+        if($arrchildid!=$cat_id){
+            $map .= 'catid in ($arrchildid)';
+        }else{
+            $map .= 'catid = '.$cat_id;
+        }
+        $map .= ' and (status = 1 or (status = 0 and createtime <'.time().'))';
+
+        return $list = $model->where($map)->order('sort asc,createtime desc')->limit(7)->select();
     }
     public function _empty(){
         return $this->error('空操作，返回上次访问页面中...');

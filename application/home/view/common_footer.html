@@ -2,27 +2,20 @@
     <div class="bottomMain cent">
         <div class="f_floor clear fl">
             <div class="bottomLogo">
-                <img src="images/logoa.png"/>
+                <img src="{$sys.logob}"/>
             </div>
             <div style="font-size: 18px;color: #3e3a39;margin-bottom: 8px;padding-left: 14px;">客服热线</div>
-            <div style="font-size: 26px;color: #ff6100;padding-left: 14px;">0579-81531200</div>
+            <div style="font-size: 26px;color: #ff6100;padding-left: 14px;">{$sys.tel}</div>
         </div>
         <div class="f_floor clear fl">
             <div class="bottom_menu">
                 <div class="bottom_menu_title">关于我们</div>
                 <ul>
+                    {volist name="about" id="vo"}
                     <li>
-                        <a href="#">公司简介</a>
+                        <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] )}">{$vo.catname}</a>
                     </li>
-                    <li>
-                        <a href="#">联系我们</a>
-                    </li>
-                    <li>
-                        <a href="#">客服中心</a>
-                    </li>
-                    <li>
-                        <a href="#">人才招聘</a>
-                    </li>
+                    {/volist}
                 </ul>
             </div>
         </div>
@@ -30,40 +23,37 @@
             <div class="bottom_menu">
                 <div class="bottom_menu_title">帮助支持</div>
                 <ul>
+                    {volist name="help" id="vo"}
                     <li>
-                        <a href="#">新手指南</a>
+                        <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] )}">{$vo.catname}</a>
                     </li>
-                    <li>
-                        <a href="#">常见问题</a>
-                    </li>
-                    <li>
-                        <a href="#">下载中心</a>
-                    </li>
+                    {/volist}
                 </ul>
             </div>
         </div>
         <div class="f_floor clear fl">
             <div class="bottom_shopinfo">
                 <ul>
-                    <li>义乌市沃虎国际货运代理有限公司</li>
-                    <li>客服QQ : 2471036706</li>
-                    <li>E-mail : vohooex@yeah.net</li>
-                    <li>公司网址：www.vohooex.com</li>
-                    <li>投诉：18606883930</li>
-                    <li>地址：浙江省义乌市下王4区20栋1楼</li>
+                    <li>{$sys.title}</li>
+                    <li>客服QQ : {$sys.qq}</li>
+                    <li>E-mail :{$sys.email}</li>
+                    <li>公司网址：{$sys.host}</li>
+                    <li>投诉：{$sys.complain}</li>
+                    <li>地址：{$sys.ads}</li>
                 </ul>
             </div>
         </div>
         <div class="f_floor clear fl">
             <div class="qrocde">
-                <img src="images/qrcode.png"/>
+                <img src="{$sys.qrcode}"/>
                 <p>扫一扫&nbsp;关注我</p>
             </div>
         </div>
     </div>
     <div class="s_floor_wrap">
         <div class="s_floor clear">
-            <div class="r txt_cent">© 2016 www.smilexpress.com.cn .All rights reserved Power by DedeCms
+            <div class="r txt_cent">
+                {$sys.copyright}    {$sys.bah}
             </div>
         </div>
     </div>

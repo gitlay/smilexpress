@@ -1,4 +1,4 @@
-<?php /*a:5:{s:63:"E:\phpStudy\WWW\express\application\home\view\page_service.html";i:1545148234;s:62:"E:\phpStudy\WWW\express\application\home\view\common_head.html";i:1545058854;s:66:"E:\phpStudy\WWW\express\application\home\view\common_position.html";i:1545146822;s:62:"E:\phpStudy\WWW\express\application\home\view\common_left.html";i:1545060774;s:64:"E:\phpStudy\WWW\express\application\home\view\common_footer.html";i:1545145623;}*/ ?>
+<?php /*a:3:{s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\index_index.html";i:1545210344;s:78:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_head.html";i:1545211043;s:80:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\common_footer.html";i:1545212886;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -171,7 +171,7 @@
         <!-- 顶部注册 e -->
         <div class="topMain clear cent">
             <a href="/" class="logo fl">
-                <img src="/static/express/images/logo.png" alt="">
+                <img src="<?php echo htmlentities($sys['logo']); ?>" alt="">
             </a>
             <i class="fl"></i>
             <div class="navwrap font14 lineh30 fr">
@@ -206,7 +206,7 @@
         <div class="bannerWrap">
             <div class="banner">
                 <ul>
-                    <?php if(is_array($adList) || $adList instanceof \think\Collection || $adList instanceof \think\Paginator): $i = 0; $__LIST__ = $adList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <?php if(is_array($bannerList) || $bannerList instanceof \think\Collection || $bannerList instanceof \think\Paginator): $i = 0; $__LIST__ = $bannerList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                     <a href="" target="_blank">
                         <li style="background: url(<?php echo htmlentities($vo['pic']); ?>)"></li>
                     </a>
@@ -242,85 +242,119 @@
     </div>
 </section>
 
-<style type="text/css">
-	.pageAskInfo-q h1 {
-		color: #ff6200;
-		font-size: 16px;
-		margin-bottom: 10px;
-	}
+<div class="bodyWrap">
+    <!-- 主体区 s-->
+    <div class="mainbody cent">
+        <div class="tongzhi lineh40 ">
+            <!-- listScroll-x|y #5 s-->
+            <!-- include jcMarquee.js & component.less #5 &底部滚动通知script -->
+            <div id="Marquee_x" class="ov">
+                <ul style="width: 1000%;">
+                    <li class="">
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
+                        </div>
 
-	.pageAskInfo-q p {
-		font-size: 14px;
-		margin-bottom: 20px;
-	}
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
+                        </div>
 
-	.pageAskInfo-q img {
-		width: 100%;
-	}
-</style>
-		<div class="bodyWrap">
-			<div class="mainbody cent">
-				<div class="Breadcrumb">
-    <span>当前位置：</span>
-    <span><a href="/">首页</a></span>
-    <span class="breadcrumb__separator">/</span>
-    <span><a href="<?php echo url('home/'.MODULE_NAME.'/index',array('catId'=>$parent['id'])); ?>"><?php echo htmlentities($parentName); ?></a></span>
-    <span class="breadcrumb__separator">/</span>
-    <span><a href="#"><?php echo htmlentities($title); ?></a></span>
-</div>
-				<div class="ov">
-					
-
-<div class="leftNav fl">
-    <div class="pageName"><?php echo htmlentities($parentName); ?></div>
-    <ul>
-        <?php if(is_array($child) || $child instanceof \think\Collection || $child instanceof \think\Paginator): $i = 0; $__LIST__ = $child;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-        <li <?php if(input('catId')==$vo['id']): ?> class="menu_on"<?php endif; ?>>
-        <a href="<?php echo url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] ); ?>">  <?php echo htmlentities($vo['catname']); ?></a>
-        </li>
-        <?php endforeach; endif; else: echo "" ;endif; ?>
-    </ul>
-    <div class="pageQrcodes">
-        <div class="qrcode-item"></div>
-        <div class="qrcode-item"></div>
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
+                        </div>
+                    </li>
+                    <li class="clone">
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
+                        </div>
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
+                        </div>
+                        <div class="fl" style="margin-right: 20px;">
+                            <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- listScroll-x|y #5 e-->
+        </div>
+        <div class="">
+            <div class="two-wrap ckwl">
+                <?php if(is_array($express) || $express instanceof \think\Collection || $express instanceof \think\Paginator): $i = 0; $__LIST__ = $express;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                <div class="two-wrap-item">
+                    <h1><?php echo htmlentities($vo['catname']); ?></h1>
+                    <p><?php echo htmlentities($vo['description']); ?></p>
+                    <div class="two-wrap-item-img"></div>
+                </div>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+            <div class="two-wrap zzyw">
+                <?php if(is_array($increment) || $increment instanceof \think\Collection || $increment instanceof \think\Paginator): $i = 0; $__LIST__ = $increment;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                <div class="two-wrap-item">
+                    <h1><?php echo htmlentities($vo['catname']); ?></h1>
+                    <p><?php echo htmlentities($vo['description']); ?></p>
+                    <div class="two-wrap-item-img"></div>
+                </div>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+        </div>
+        <div class="mainNews">
+            <div class="mainNewsLeft fl">
+                <div class="main-news-menu">
+                    <?php if(is_array($news) || $news instanceof \think\Collection || $news instanceof \think\Paginator): $i = 0; $__LIST__ = $news;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <div class="main-news-menu-item <?php if($i == '1'): ?>main-news-menu-item-on<?php endif; ?>"><?php echo htmlentities($vo['catname']); ?></div>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </div>
+            <?php if(is_array($news) || $news instanceof \think\Collection || $news instanceof \think\Paginator): $i = 0; $__LIST__ = $news;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                <div class="main-news-list" <?php if($i > '1'): ?>style="display:none"<?php endif; ?> >
+                    <ul>
+                        <?php if(is_array($v['content']) || $v['content'] instanceof \think\Collection || $v['content'] instanceof \think\Paginator): $k = 0; $__LIST__ = $v['content'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?>
+                        <li>
+                            <a href="<?php echo url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid'])); ?>">
+                                <label><?php echo htmlentities($vo['title']); ?></label>
+                                <p><?php echo toDate($vo["createtime"],'Y-m-d'); ?></p>
+                            </a>
+                        </li>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </ul>
+                </div>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+            <div class="mainNewsRight fr">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <?php if(is_array($adList) || $adList instanceof \think\Collection || $adList instanceof \think\Paginator): $i = 0; $__LIST__ = $adList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo htmlentities($vo['pic']); ?>"/>
+                        </div>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-					<div class="rightMain fr">
-						<div class="pageTitle"><?php echo htmlentities($info['title']); ?></div>
-						<div class="pageAskInfo">
-							<div class="pageAskInfo-q">
-							<?php echo $info['content']; ?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-<div class="bottom">
+    <!-- 主体区 e-->
+
+    <div class="bottom">
     <div class="bottomMain cent">
         <div class="f_floor clear fl">
             <div class="bottomLogo">
-                <img src="images/logoa.png"/>
+                <img src="<?php echo htmlentities($sys['logob']); ?>"/>
             </div>
             <div style="font-size: 18px;color: #3e3a39;margin-bottom: 8px;padding-left: 14px;">客服热线</div>
-            <div style="font-size: 26px;color: #ff6100;padding-left: 14px;">0579-81531200</div>
+            <div style="font-size: 26px;color: #ff6100;padding-left: 14px;"><?php echo htmlentities($sys['tel']); ?></div>
         </div>
         <div class="f_floor clear fl">
             <div class="bottom_menu">
                 <div class="bottom_menu_title">关于我们</div>
                 <ul>
+                    <?php if(is_array($about) || $about instanceof \think\Collection || $about instanceof \think\Paginator): $i = 0; $__LIST__ = $about;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                     <li>
-                        <a href="#">公司简介</a>
+                        <a href="<?php echo url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] ); ?>"><?php echo htmlentities($vo['catname']); ?></a>
                     </li>
-                    <li>
-                        <a href="#">联系我们</a>
-                    </li>
-                    <li>
-                        <a href="#">客服中心</a>
-                    </li>
-                    <li>
-                        <a href="#">人才招聘</a>
-                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
             </div>
         </div>
@@ -328,40 +362,37 @@
             <div class="bottom_menu">
                 <div class="bottom_menu_title">帮助支持</div>
                 <ul>
+                    <?php if(is_array($help) || $help instanceof \think\Collection || $help instanceof \think\Paginator): $i = 0; $__LIST__ = $help;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                     <li>
-                        <a href="#">新手指南</a>
+                        <a href="<?php echo url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] ); ?>"><?php echo htmlentities($vo['catname']); ?></a>
                     </li>
-                    <li>
-                        <a href="#">常见问题</a>
-                    </li>
-                    <li>
-                        <a href="#">下载中心</a>
-                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
             </div>
         </div>
         <div class="f_floor clear fl">
             <div class="bottom_shopinfo">
                 <ul>
-                    <li>义乌市沃虎国际货运代理有限公司</li>
-                    <li>客服QQ : 2471036706</li>
-                    <li>E-mail : vohooex@yeah.net</li>
-                    <li>公司网址：www.vohooex.com</li>
-                    <li>投诉：18606883930</li>
-                    <li>地址：浙江省义乌市下王4区20栋1楼</li>
+                    <li><?php echo htmlentities($sys['title']); ?></li>
+                    <li>客服QQ : <?php echo htmlentities($sys['qq']); ?></li>
+                    <li>E-mail :<?php echo htmlentities($sys['email']); ?></li>
+                    <li>公司网址：<?php echo htmlentities($sys['host']); ?></li>
+                    <li>投诉：<?php echo htmlentities($sys['complain']); ?></li>
+                    <li>地址：<?php echo htmlentities($sys['ads']); ?></li>
                 </ul>
             </div>
         </div>
         <div class="f_floor clear fl">
             <div class="qrocde">
-                <img src="images/qrcode.png"/>
+                <img src="<?php echo htmlentities($sys['qrcode']); ?>"/>
                 <p>扫一扫&nbsp;关注我</p>
             </div>
         </div>
     </div>
     <div class="s_floor_wrap">
         <div class="s_floor clear">
-            <div class="r txt_cent">© 2016 www.smilexpress.com.cn .All rights reserved Power by DedeCms
+            <div class="r txt_cent">
+                <?php echo htmlentities($sys['copyright']); ?>    <?php echo htmlentities($sys['bah']); ?>
             </div>
         </div>
     </div>

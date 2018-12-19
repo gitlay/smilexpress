@@ -1,7 +1,23 @@
-{include file="common/head"/}
+<?php /*a:3:{s:81:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\system\system.html";i:1545211993;s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\common\head.html";i:1545043811;s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\common\foot.html";i:1545043811;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><?php echo config('sys_name'); ?>后台管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/static/plugins/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="/static/admin/css/global.css" media="all">
+    <link rel="stylesheet" href="/static/common/css/font.css" media="all">
+</head>
+<body class="skin-<?php if(!empty($_COOKIE['skin'])){echo $_COOKIE['skin'];}else{echo '0';setcookie('skin','0');}?>">
 <div class="admin-main layui-anim layui-anim-upbit">
     <fieldset class="layui-elem-field layui-field-title">
-        <legend>{:lang('systemSet')}</legend>
+        <legend><?php echo lang('systemSet'); ?></legend>
     </fieldset>
     <div class="layui-tab">
         <ul class="layui-tab-title">
@@ -13,15 +29,15 @@
             <div class="layui-tab-item layui-show">
                 <form class="layui-form layui-form-pane" lay-filter="form-system">
                     <div class="layui-form-item">
-                        <label class="layui-form-label">{:lang('websiteName')}</label>
+                        <label class="layui-form-label"><?php echo lang('websiteName'); ?></label>
                         <div class="layui-input-4">
-                            <input type="text"name="name" lay-verify="required" placeholder="{:lang('pleaseEnter')}{:lang('websiteName')}" class="layui-input">
+                            <input type="text"name="name" lay-verify="required" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('websiteName'); ?>" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">{:lang('WebsiteUrl')}</label>
+                        <label class="layui-form-label"><?php echo lang('WebsiteUrl'); ?></label>
                         <div class="layui-input-4">
-                            <input type="text" name="url" lay-verify="url" placeholder="{:lang('pleaseEnter')}{:lang('WebsiteUrl')}" class="layui-input">
+                            <input type="text" name="url" lay-verify="url" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('WebsiteUrl'); ?>" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -67,57 +83,39 @@
                     </div>
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">{:lang('recordNum')}</label>
+                        <label class="layui-form-label"><?php echo lang('recordNum'); ?></label>
                         <div class="layui-input-3">
-                            <input type="text" name="bah" placeholder="{:lang('pleaseEnter')}{:lang('recordNum')}" class="layui-input">
+                            <input type="text" name="bah" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('recordNum'); ?>" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">Copyright</label>
                         <div class="layui-input-3">
-                            <input type="text" name="copyright" placeholder="{:lang('pleaseEnter')}Copyright" class="layui-input">
+                            <input type="text" name="copyright" placeholder="<?php echo lang('pleaseEnter'); ?>Copyright" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">{:lang('companyAddress')}</label>
+                        <label class="layui-form-label"><?php echo lang('companyAddress'); ?></label>
                         <div class="layui-input-3">
-                            <input type="text" name="ads" placeholder="{:lang('pleaseEnter')}{:lang('companyAddress')}" class="layui-input">
+                            <input type="text" name="ads" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('companyAddress'); ?>" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">客服电话</label>
+                        <label class="layui-form-label"><?php echo lang('tel'); ?></label>
                         <div class="layui-input-3">
-                            <input type="text" name="tel" placeholder="{:lang('pleaseEnter')}客服电话" class="layui-input">
+                            <input type="text" name="tel" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('tel'); ?>" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">投诉电话</label>
+                        <label class="layui-form-label"><?php echo lang('email'); ?></label>
                         <div class="layui-input-3">
-                            <input type="text" name="complain" placeholder="请输入投诉电话" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">QQ</label>
-                        <div class="layui-input-3">
-                            <input type="text" name="complain" placeholder="请输入QQ" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">网址</label>
-                        <div class="layui-input-3">
-                            <input type="text" name="complain" placeholder="请输入网址" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">{:lang('email')}</label>
-                        <div class="layui-input-3">
-                            <input type="text" name="email" placeholder="{:lang('pleaseEnter')}{:lang('email')}" class="layui-input">
+                            <input type="text" name="email" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('email'); ?>" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button type="button" class="layui-btn" lay-submit="" lay-filter="sys">{:lang('submit')}</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">{:lang('reset')}</button>
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="sys"><?php echo lang('submit'); ?></button>
+                            <button type="reset" class="layui-btn layui-btn-primary"><?php echo lang('reset'); ?></button>
                         </div>
                     </div>
                 </form>
@@ -125,28 +123,28 @@
             <div class="layui-tab-item">
                 <form class="layui-form layui-form-pane" lay-filter="form-system">
                     <div class="layui-form-item">
-                        <label class="layui-form-label">{:lang('seoTitle')}</label>
+                        <label class="layui-form-label"><?php echo lang('seoTitle'); ?></label>
                         <div class="layui-input-4">
-                            <input type="text"name="title" lay-verify="required" placeholder="{:lang('pleaseEnter')}{:lang('WebsiteUrl')}" class="layui-input">
+                            <input type="text"name="title" lay-verify="required" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('WebsiteUrl'); ?>" class="layui-input">
                         </div>
                     </div>
 
                     <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">{:lang('seoKeyword')}</label>
+                        <label class="layui-form-label"><?php echo lang('seoKeyword'); ?></label>
                         <div class="layui-input-block">
-                            <textarea name="key" lay-verify="required" placeholder="{:lang('pleaseEnter')}{:lang('seoKeyword')}" class="layui-textarea"></textarea>
+                            <textarea name="key" lay-verify="required" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('seoKeyword'); ?>" class="layui-textarea"></textarea>
                         </div>
                     </div>
                     <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">{:lang('description')}</label>
+                        <label class="layui-form-label"><?php echo lang('description'); ?></label>
                         <div class="layui-input-block">
-                            <textarea name="des" lay-verify="required" placeholder="{:lang('pleaseEnter')}{:lang('description')}" class="layui-textarea"></textarea>
+                            <textarea name="des" lay-verify="required" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('description'); ?>" class="layui-textarea"></textarea>
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button type="button" class="layui-btn" lay-submit="" lay-filter="sys">{:lang('submit')}</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">{:lang('reset')}</button>
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="sys"><?php echo lang('submit'); ?></button>
+                            <button type="reset" class="layui-btn layui-btn-primary"><?php echo lang('reset'); ?></button>
                         </div>
                     </div>
                 </form>
@@ -169,8 +167,8 @@
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button type="button" class="layui-btn" lay-submit="" lay-filter="sys">{:lang('submit')}</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">{:lang('reset')}</button>
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="sys"><?php echo lang('submit'); ?></button>
+                            <button type="reset" class="layui-btn layui-btn-primary"><?php echo lang('reset'); ?></button>
                         </div>
                     </div>
                 </form>
@@ -179,11 +177,13 @@
     </div>
 
 </div>
-{include file="common/foot"/}
+<script type="text/javascript" src="/static/plugins/layui/layui.js"></script>
+
+
 <script>
     layui.use(['form', 'layer','upload','element'], function () {
         var form = layui.form,layer = layui.layer,upload = layui.upload,$ = layui.jquery,element = layui.element;
-        var seytem = {$system|raw};
+        var seytem = <?php echo $system; ?>;
         form.val("form-system", seytem);
         $('#cltLogo').attr('src',seytem.logo);
         $('#cltLogoa').attr('src',seytem.logoa);
@@ -191,7 +191,7 @@
         //普通图片上传
         var uploadInst = upload.render({
             elem: '#logoBtn'
-            ,url: '{:url("UpFiles/upload")}'
+            ,url: '<?php echo url("UpFiles/upload"); ?>'
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -220,7 +220,7 @@
         //普通图片上传
         var uploadInsta = upload.render({
             elem: '#logoBtna'
-            ,url: '{:url("UpFiles/upload")}'
+            ,url: '<?php echo url("UpFiles/upload"); ?>'
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -249,7 +249,7 @@
 
         var uploadInstb = upload.render({
             elem: '#logoBtnb'
-            ,url: '{:url("UpFiles/upload")}'
+            ,url: '<?php echo url("UpFiles/upload"); ?>'
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -278,7 +278,7 @@
         //提交监听
         form.on('submit(sys)', function (data) {
             loading =layer.load(1, {shade: [0.1,'#fff']});
-            $.post("{:url('system/system')}",data.field,function(res){
+            $.post("<?php echo url('system/system'); ?>",data.field,function(res){
                 layer.close(loading);
                 if(res.code > 0){
                     layer.msg(res.msg,{icon: 1, time: 1000},function(){

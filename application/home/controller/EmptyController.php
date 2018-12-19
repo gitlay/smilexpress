@@ -85,6 +85,7 @@ class EmptyController extends Common{
             }
 			$cattemplate = db('category')->where('id',input('catId'))->value('template_list');
 			$template =$cattemplate ? $cattemplate : DBNAME.'_list';
+
             return $this->fetch($template);
         }
     }

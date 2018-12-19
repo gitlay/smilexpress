@@ -2,8 +2,8 @@
 //000000000000
  exit();?>
 think_serialize:a:15:{s:5:"catid";a:18:{s:2:"id";i:7;s:8:"moduleid";i:2;s:5:"field";s:5:"catid";s:4:"name";s:6:"栏目";s:4:"tips";s:0:"";s:8:"required";i:1;s:9:"minlength";i:1;s:9:"maxlength";i:6;s:7:"pattern";s:0:"";s:8:"errormsg";s:24:"必须选择一个栏目";s:5:"class";s:0:"";s:4:"type";s:5:"catid";s:5:"setup";s:0:"";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:1;s:6:"status";i:1;s:8:"issystem";i:1;}s:5:"title";a:18:{s:2:"id";i:8;s:8:"moduleid";i:2;s:5:"field";s:5:"title";s:4:"name";s:6:"标题";s:4:"tips";s:0:"";s:8:"required";i:1;s:9:"minlength";i:1;s:9:"maxlength";i:80;s:7:"pattern";s:6:"defaul";s:8:"errormsg";s:28:"标题必须为1-80个字符";s:5:"class";s:5:"title";s:4:"type";s:5:"title";s:5:"setup";s:45:"array (
-  'thumb' => '1',
-  'style' => '1',
+  'thumb' => '0',
+  'style' => '0',
 )";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:2;s:6:"status";i:1;s:8:"issystem";i:1;}s:8:"keywords";a:18:{s:2:"id";i:9;s:8:"moduleid";i:2;s:5:"field";s:8:"keywords";s:4:"name";s:9:"关键词";s:4:"tips";s:0:"";s:8:"required";i:0;s:9:"minlength";i:0;s:9:"maxlength";i:80;s:7:"pattern";s:0:"";s:8:"errormsg";s:0:"";s:5:"class";s:0:"";s:4:"type";s:4:"text";s:5:"setup";s:97:"array (
   'size' => '55',
   'default' => '',

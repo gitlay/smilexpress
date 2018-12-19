@@ -170,7 +170,7 @@
         <!-- 顶部注册 e -->
         <div class="topMain clear cent">
             <a href="/" class="logo fl">
-                <img src="/static/express/images/logo.png" alt="">
+                <img src="{$sys.logo}" alt="">
             </a>
             <i class="fl"></i>
             <div class="navwrap font14 lineh30 fr">
@@ -205,7 +205,7 @@
         <div class="bannerWrap">
             <div class="banner">
                 <ul>
-                    {volist name="adList" id="vo" key="i"}
+                    {volist name="bannerList" id="vo" key="i"}
                     <a href="" target="_blank">
                         <li style="background: url({$vo.pic})"></li>
                     </a>

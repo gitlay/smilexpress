@@ -58,9 +58,22 @@ class Index extends Common{
             }
             $this->assign('style', $style);
             $this->assign('js', $js);
+
+            /*****************************新增*******************************/
+            //出口物流
+            $express = $this->getChildCategory(32);
+            $this->assign('express', $express);
+
+            $increment = $this->getChildCategory(37);
+            $this->assign('increment', $increment);
+
+            $news = $this->getChildCategory(1,1);
+            $this->assign('news', $news);
+
         }
         return $this->fetch();
     }
+
     public function senmsg(){
         $data = input('post.');
         $data['addtime'] = time();

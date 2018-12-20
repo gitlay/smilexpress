@@ -11,7 +11,7 @@ class System extends Common
         if(Request::isAjax()) {
             $data = Request::except('file');
             if($table->where('id',1)->update($data)!==false) {
-                savecache('System');
+            //    savecache('System');
                 return json(['code' => 1, 'msg' => '站点设置保存成功!', 'url' => url('system/system')]);
             } else {
                 return json(array('code' => 0, 'msg' =>'站点设置保存失败！'));

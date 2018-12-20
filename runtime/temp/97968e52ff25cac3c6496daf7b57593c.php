@@ -1,4 +1,4 @@
-<?php /*a:3:{s:81:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\system\system.html";i:1545211993;s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\common\head.html";i:1545043811;s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\common\foot.html";i:1545043811;}*/ ?>
+<?php /*a:3:{s:81:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\system\system.html";i:1545212331;s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\common\head.html";i:1545043811;s:79:"D:\phpStudy\PHPTutorial\WWW\smilexpress\application\admin\view\common\foot.html";i:1545043811;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,9 +101,27 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label"><?php echo lang('tel'); ?></label>
+                        <label class="layui-form-label">客服电话</label>
                         <div class="layui-input-3">
-                            <input type="text" name="tel" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('tel'); ?>" class="layui-input">
+                            <input type="text" name="tel" placeholder="<?php echo lang('pleaseEnter'); ?>客服电话" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">投诉电话</label>
+                        <div class="layui-input-3">
+                            <input type="text" name="complain" placeholder="请输入投诉电话" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">QQ</label>
+                        <div class="layui-input-3">
+                            <input type="text" name="complain" placeholder="请输入QQ" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网址</label>
+                        <div class="layui-input-3">
+                            <input type="text" name="complain" placeholder="请输入网址" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">

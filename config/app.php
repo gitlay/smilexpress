@@ -161,9 +161,9 @@ return [
     ],
     'pageSize'=>15,
     //自定义配置
-    'sys_name' =>'CLTPHP',
+    'sys_name' =>'沃狐国际',
     //文件上传
     'addwater'=>false,
-    'watertext'=>'CLTPHP',
+    'watertext'=>'沃狐国际',
     'version'=>'5.7.4'
 ];

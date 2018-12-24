@@ -16,136 +16,7 @@
     <script src="/static/express/js/koala.min.1.5.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
 </head>
-<style type="text/css">
-    .two-wrap {
-        width: 100%;
-        height: 270px;
-        margin-bottom: 15px;
-        box-sizing: border-box;
-        display: flex;
-        display: -webkit-flex;
-        align-content: center;
-        justify-content: center;
-    }
 
-    .ckwl {
-        background-size: cover;
-        padding-left: 100px;
-        background-image: url(images/chukouwuliu2.png);
-    }
-
-    .zzyw {
-        background-size: cover;
-        padding-right: 100px;
-        background-image: url(images/zengzhiyewu2.png);
-    }
-
-    .two-wrap-item {
-        padding: 10px;
-        flex: 1;
-        -webkit-flex: 1;
-        height: 240px;
-        margin-top: 15px;
-        background-color: #FFF;
-        box-sizing: border-box;
-        text-align: center;
-        margin-right: 10px;
-        color: #3e3a39;
-        -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
-        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
-    }
-
-    .two-wrap-item h1 {
-        font-size: 18px;
-        color: #3e3a39;
-        margin-bottom: 5px;
-    }
-
-    .two-wrap-item p {
-        font-size: 15px;
-        color: #3e3a39;
-        margin-bottom: 5px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        text-align: left;
-        text-indent: 2em;
-    }
-
-    .two-wrap-item-img {
-        height: 120px;
-        width: 100%;
-        background-color: #EEE;
-    }
-
-    .zzyw .two-wrap-item {
-        margin-right: 0px;
-        margin-left: 10px;
-    }
-
-    .mainNews {
-        padding: 10px;
-        background-color: #f7f7f7;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    .mainNewsLeft {
-        width: 60%;
-        padding-right: 30px;
-        box-sizing: border-box;
-    }
-
-    .mainNewsRight {
-        width: 40%;
-    }
-
-    .main-news-menu {
-        display: flex;
-        display: -webkit-flex;
-    }
-
-    .main-news-menu-item {
-        padding: 4px 10px;
-        margin-right: 10px;
-    }
-
-    .main-news-menu-item-on {
-        color: #FFF;
-        background-color: #ff6200;
-    }
-
-    .main-news-list {
-        margin-top: 20px;
-    }
-
-    .main-news-list ul li a {
-        display: flex;
-        display: -webkit-flex;
-        align-items: center;
-        line-height: 28px;
-        justify-content: space-between;
-    }
-
-    .main-news-list ul li a label {
-        width: 360px;
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        font-size: 15px;
-        color: #888;
-    }
-
-    .main-news-list ul li a p {
-        font-size: 15px;
-    }
-</style>
 <body>
 <section>
     <div class="top">
@@ -154,14 +25,24 @@
             <div class="mid clear cent ">
                 <div class="fr">
                     <div class="regist fl lineh30 font12">
-                        <a href="/hydl/" class="colorf0">登录</a>
-                        <a href="/member/">注册</a>
+                       <?php if(Session::has('user')){
+                       ?>
+
+                       <a href="javascript:" class="colorf0">{:session('user.username')}</a>
+                        <a href="{:url('user/login/logout')}">退出</a>
+                      <?php }else{
+                       ?>
+                        <a href="{:url('user/login/index')}" class="colorf0">登录</a>
+                        <a href="{:url('user/login/reg')}">注册</a>
+
+                        <?php  } ?>
                     </div>
                     <div class="lang fl ">
                     </div>
                     <div class="lang fl " style="margin-top: 2px;">
-                        <form action="/search.asp" method="post">
-                            <input type="text" name="key">&nbsp;&nbsp;<input type="submit" name="search" value="搜索">
+                        <form action="{:url('home/index/search')}" method="get">
+                            <input type="text" name="keyword">
+                            &nbsp;&nbsp;<input type="submit" name="search" value="搜索">
                         </form>
                     </div>
                 </div>
@@ -184,11 +65,12 @@
                             <ul class="sub_nav2">
                                 {volist name="$vo.sub" id="v"}
                                 <li>
-                                    <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$v['id']] )}">
-                                        <img src="{$v.image}" alt="" width="160" height="90">
-                                    </a>
+
                                     <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$v['id']] )}">
                                         <h3>{$v.catname}</h3>
+                                    </a>
+                                    <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$v['id']] )}">
+                                        <img src="{$v.image}" alt="" width="160" height="90">
                                     </a>
                                 </li>
                                 {/volist}
@@ -218,6 +100,125 @@
                 </div>
             </div>
             <!--banner e-->
+        </div>
+
+        <div class="quickBar  cent clear">
+            <div class="quickWrap">
+                <div class="number">
+                    <div class="numWrap txt_cent color_f  ">
+                        <div class="clear up">
+                            <b class="num_a">0</b>
+                            <b class="num_b">5</b>
+                            <b class="num_c">7</b>
+                            <b class="num_d">9</b>
+                            <b class="num_e">8</b>
+                            <b class="num_f">1</b>
+                            <b class="num_g">5</b>
+                            <b class="num_h">3</b>
+                            <b class="num_i">1</b>
+                            <b class="num_j">2</b>
+                            <b class="num_l">0</b>
+                            <b class="num_m">0</b>
+                        </div>
+                    </div>
+                    <span class="unit-title color_f ">客户热线</span>
+                </div>
+                <div class="yfyd lastChild" id="ico_feeServ">
+                    <ul>
+                        <li class="fee fl">
+                            <div class="ico">
+                                <a href="#">
+                                    <div class="iWrap"><img src="/static/express/images/sousuo.png" /></div>
+                                    <span class="unit-title color_f lineh40">运费查询</span>
+                                </a>
+                            </div>
+                            <div class="sub no position_r">
+                                <form action="" method="post" name="资费查询" target="_blank"><input size="30" type="hidden" name="w" value="hyeasy">
+                                    <div class="serve-cont">
+											<span>
+								        <label>
+								            目的地：</label>
+								        <div class="input-select " id="yto_yf_go">
+								            <input name="cdes" class="input-select-text level_1 cdes" type="text">
+								        </div>
+								    </span><span>
+								        <label>长/cm：</label>
+								        <div class="input-select " id="yto_yf_to">
+								            <input name="il" class="input-select-text level_2 il" type="text">
+								        </div>
+								        <label>宽/cm：</label>
+								        <div name="iw" class="input-select " id="yto_yf_to">
+								            <input class="input-select-text level_2 iw" type="text">
+								        </div>
+								        <label>高/cm：</label>
+								        <div name="ih" class="input-select " id="yto_yf_to">
+								            <input class="input-select-text level_2 ih" type="text">
+								        </div>
+								    </span>
+                                        <span>
+								        <label> 重量/kg：</label>
+								        <input type="text" class="wl_50 f_left level_2 fweight" id="txtexpressWeight" name="fweight" size="6" maxlength="5">
+								        <label>类型：</label>
+								            <select name="itype" class="input-select-text level_2">
+								            	<option value="0">包裹</option>
+								            	<option value="1">文件</option>
+								        	</select>
+								        <input type="submit" value="查询" class="fr level_3" id="yf_link">
+								    </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <li class="fee fl lastChild">
+                            <div class="sub no position_r">
+                                <form action="" method="post" name="资费查询" target="_blank"><input size="30" type="hidden" name="w" value="hyeasy">
+                                    <div class="serve-cont">
+											<span>
+								        <label>寄件人：</label>
+								        <div class="input-select " id="yto_yf_to">
+								            <input name="il" class="input-select-text sinput il" type="text">
+								        </div>
+								        <label>收件人：</label>
+								        <div name="iw" class="input-select " id="yto_yf_to">
+								            <input class="input-select-text sinput iw" type="text">
+								        </div>
+								    </span><span>
+								        <label>电话：</label>
+								        <div class="input-select " id="yto_yf_to">
+								            <input name="il" class="input-select-text sinput il" type="text">
+								        </div>
+								        <label>电话：</label>
+								        <div name="iw" class="input-select " id="yto_yf_to">
+								            <input class="input-select-text sinput iw" type="text">
+								        </div>
+								    </span>
+                                        <input type="submit" value="网上下单" class="fr level_3" id="yf_link">
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="ico">
+                                <a href="#">
+                                    <div class="iWrap"><img src="/static/express/images/xd.png" /></div>
+                                    <span class="unit-title color_f lineh40">网上下单</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="onlineAsk txt_cent">
+                    <a href="">
+                        <div class="iWrap"><img src="/static/express/images/ly.png" /></div>
+                        <span class="unit-title color_f lineh40">留言反馈</span>
+                    </a>
+                </div>
+                <div class="order">
+                    <a href="/order/">
+                        <div class="iWrap"><img src="/static/express/images/xz.png" /></div>
+                        <span class="unit-title color_f lineh40">文件下载</span>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- 快递追踪 s-->
         <div class="track cent position_a">

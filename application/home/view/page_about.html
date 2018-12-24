@@ -1,18 +1,4 @@
 {include file="common/head"/}
-<style type="text/css">
-	.pageAskInfo-q h1{
-		color: #ff6200;
-		font-size: 16px;
-		margin-bottom: 10px;
-	}
-	.pageAskInfo-q p{
-		font-size: 14px;
-		margin-bottom: 20px;
-	}
-	.pageAskInfo-q img{
-		width: 100%;
-	}
-</style>
 		<div class="bodyWrap">
 			<div class="mainbody cent">
 				{include file="common/position"/}
@@ -20,10 +6,8 @@
 					{include file="common/left"/}
 					<div class="rightMain fr">
 						<div class="pageTitle">{$info.title}</div>
-						<div class="pageAskInfo">
-							<div class="pageAskInfo-q">
-								{$info.content|raw}
-							</div>
+						<div class="pageInfo">
+							{$info.content|raw}
 						</div>
 					</div>
 				</div>

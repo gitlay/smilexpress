@@ -1,97 +1,222 @@
 {include file="common/head"/}
+<style type="text/css">
+	.two-wrap {
+		width: 100%;
+		height: 270px;
+		margin-bottom: 15px;
+		box-sizing: border-box;
+		display: flex;
+		display: -webkit-flex;
+		align-content: center;
+		justify-content: center;
+	}
+
+	.ckwl {
+		background-size: cover;
+		padding-left: 100px;
+		background-image: url(/static/express/images/chukouwuliu2.png);
+	}
+
+	.zzyw {
+		background-size: cover;
+		padding-right: 100px;
+		background-image: url(/static/express/images/zengzhiyewu2.png);
+	}
+
+	.two-wrap-item {
+		padding: 10px;
+		flex: 1;
+		-webkit-flex: 1;
+		height: 240px;
+		margin-top: 15px;
+		background-color: #FFF;
+		box-sizing: border-box;
+		text-align: center;
+		margin-right: 10px;
+		color: #3e3a39;
+		-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+		box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+	}
+
+	.two-wrap-item h1 {
+		font-size: 18px;
+		color: #3e3a39;
+		margin-bottom: 5px;
+	}
+
+	.two-wrap-item p {
+		font-size: 15px;
+		color: #3e3a39;
+		margin-bottom: 5px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		text-align: left;
+		text-indent: 2em;
+	}
+
+	.two-wrap-item-img {
+		height: 120px;
+		width: 100%;
+		background-color: #EEE;
+	}
+
+	.zzyw .two-wrap-item {
+		margin-right: 0px;
+		margin-left: 10px;
+	}
+
+	.mainNews {
+		padding: 10px;
+		background-color: #f7f7f7;
+		margin-bottom: 10px;
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+
+	.mainNewsLeft {
+		width: 60%;
+		padding-right: 30px;
+		box-sizing: border-box;
+	}
+
+	.mainNewsRight {
+		width: 40%;
+	}
+
+	.main-news-menu {
+		display: flex;
+		display: -webkit-flex;
+	}
+
+	.main-news-menu-item {
+		padding: 4px 10px;
+		margin-right: 10px;
+	}
+
+	.main-news-menu-item-on {
+		color: #FFF;
+		background-color: #ff6200;
+	}
+
+	.main-news-list {
+		margin-top: 20px;
+	}
+
+	.main-news-list ul li a {
+		display: flex;
+		display: -webkit-flex;
+		align-items: center;
+		line-height: 28px;
+		justify-content: space-between;
+	}
+
+	.main-news-list ul li a label {
+		width: 360px;
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		font-size: 15px;
+		color: #888;
+	}
+
+	.main-news-list ul li a p {
+		font-size: 15px;
+	}
+</style>
 <div class="bodyWrap">
-    <!-- 主体区 s-->
-    <div class="mainbody cent">
-        <div class="tongzhi lineh40 ">
-            <!-- listScroll-x|y #5 s-->
-            <!-- include jcMarquee.js & component.less #5 &底部滚动通知script -->
-            <div id="Marquee_x" class="ov">
-                <ul style="width: 1000%;">
-                    <li class="">
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
-                        </div>
+	<!-- 主体区 s-->
+	<div class="mainbody cent">
+		<div class="tongzhi lineh40 ">
+			<!-- listScroll-x|y #5 s-->
+			<!-- include jcMarquee.js & component.less #5 &底部滚动通知script -->
+			<div id="Marquee_x" class="ov">
+				<ul style="width: 1000%;">
+					{clist db='article' id='vo' where="posid = 1" limit='4'}
+					<li class="">
+						<div class="fl" style="margin-right: 20px;">
+							<a href="{:url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}">{$vo.title}</a>
+						</div>
 
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
-                        </div>
+						{/clist}
+					</li>
+					<!--  <li class="clone">
+                          <div class="fl" style="margin-right: 20px;">
+                              <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
+                          </div>
+                          <div class="fl" style="margin-right: 20px;">
+                              <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
+                          </div>
+                          <div class="fl" style="margin-right: 20px;">
+                              <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
+                          </div>
+                      </li>-->
+				</ul>
+			</div>
+			<!-- listScroll-x|y #5 e-->
+		</div>
+		<div class="">
+			<div class="two-wrap ckwl">
+				{volist name="express" id="vo"}
+				<div class="two-wrap-item">
+					<h1>{$vo.catname}</h1>
+					<p>{$vo.description}</p>
+					<div class="two-wrap-item-img"></div>
+				</div>
+				{/volist}
+			</div>
+			<div class="two-wrap zzyw">
+				{volist name="increment" id="vo"}
+				<div class="two-wrap-item">
+					<h1>{$vo.catname}</h1>
+					<p>{$vo.description}</p>
+					<div class="two-wrap-item-img"></div>
+				</div>
+				{/volist}
+			</div>
+		</div>
+		<div class="mainNews">
+			<div class="mainNewsLeft fl">
+				<div class="main-news-menu">
+					{volist name="news" id="vo"}
+					<div class="main-news-menu-item {eq name="i" value="1"}main-news-menu-item-on{/eq}">{$vo.catname}</div>
+				{/volist}
+			</div>
+			{volist name="news" id="v" }
+			<div class="main-news-list" {gt name="i" value="1"}style="display:none"{/gt} >
+			<ul>
+				{volist name="v['content']" id="vo" key="k"}
+				<li>
+					<a href="{:url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}">
+						<label>{$vo.title}</label>
+						<p>{:toDate($vo["createtime"],'Y-m-d')}</p>
+					</a>
+				</li>
+				{/volist}
+			</ul>
+		</div>
+		{/volist}
+	</div>
+	<div class="mainNewsRight fr">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				{volist name="adList" id="vo" key="i"}
+				<div class="swiper-slide">
+					<img src="{$vo.pic}"/>
+				</div>
+				{/volist}
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- 主体区 e-->
 
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
-                        </div>
-                    </li>
-                    <li class="clone">
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/2045.htm">俄罗斯国际空运专线快递</a>
-                        </div>
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/2001.htm">2018年国际快递价格调整通知</a>
-                        </div>
-                        <div class="fl" style="margin-right: 20px;">
-                            <a href="/xwzx/gdtz/1991.htm">2018年DHL出口价格表</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- listScroll-x|y #5 e-->
-        </div>
-        <div class="">
-            <div class="two-wrap ckwl">
-                {volist name="express" id="vo"}
-                <div class="two-wrap-item">
-                    <h1>{$vo.catname}</h1>
-                    <p>{$vo.description}</p>
-                    <div class="two-wrap-item-img"></div>
-                </div>
-                {/volist}
-            </div>
-            <div class="two-wrap zzyw">
-                {volist name="increment" id="vo"}
-                <div class="two-wrap-item">
-                    <h1>{$vo.catname}</h1>
-                    <p>{$vo.description}</p>
-                    <div class="two-wrap-item-img"></div>
-                </div>
-                {/volist}
-            </div>
-        </div>
-        <div class="mainNews">
-            <div class="mainNewsLeft fl">
-                <div class="main-news-menu">
-                    {volist name="news" id="vo"}
-                    <div class="main-news-menu-item {eq name="i" value="1"}main-news-menu-item-on{/eq}">{$vo.catname}</div>
-                    {/volist}
-                </div>
-            {volist name="news" id="v" }
-                <div class="main-news-list" {gt name="i" value="1"}style="display:none"{/gt} >
-                    <ul>
-                        {volist name="v['content']" id="vo" key="k"}
-                        <li>
-                            <a href="{:url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}">
-                                <label>{$vo.title}</label>
-                                <p>{:toDate($vo["createtime"],'Y-m-d')}</p>
-                            </a>
-                        </li>
-                        {/volist}
-                    </ul>
-                </div>
-            {/volist}
-            </div>
-            <div class="mainNewsRight fr">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        {volist name="adList" id="vo" key="i"}
-                        <div class="swiper-slide">
-                            <img src="{$vo.pic}"/>
-                        </div>
-                        {/volist}
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 主体区 e-->
-
-    {include file="common/footer"/}
+{include file="common/footer"/}

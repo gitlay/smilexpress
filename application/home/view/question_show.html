@@ -17,7 +17,7 @@
 							<ul>
 								{php} $catid = input("catId");{/php}
 								{clist db='article' id='vo' where='posid = 3 and catid=".$catid." ' limit='5'}
-								<li><a href="">问：{$vo.title}</a></li>
+								<li><a href="{:url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}">问：{$vo.title}</a></li>
 								{/clist}
 							</ul>
 						</div>

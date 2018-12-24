@@ -1,0 +1,225 @@
+---------------------------------------------------------------
+[ 2018-12-21T10:02:17+08:00 ] 127.0.0.1 GET shop.com/index.php?m=admin
+[运行时间：0.983056s] [吞吐率：1.02req/s] [内存消耗：3,470.58kb] [文件加载：81]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D; cMySa_admin_username=d5a8GE88tuMxrjOBvwH4pOIl3bji1AvhAKMmTOWuSQRjYQ; cMySa_siteid=d5a8GE88tuMxrjOBv1H__eJ1hL211gjkU6lyTuT-; cMySa_userid=c7913Ag9XoMAesqLwswojGhuCoiEFoUlkGLhw17I; cMySa_admin_email=c7913Ag9XoMAesqLwp9xg2g2UIyBEtAjkzbnlVmYA21rX5HqK34; cMySa_sys_lang=df8bw1cBPlvaJIE9DVDmkjhC0dY3LVK_w2Elwhw5XirQvg; sYQDUGqqzHrefersh_time=0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+  'm' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\smilexpress\application\home\view\index_index.html [ array (
+  0 => 'sys',
+  1 => 'action',
+  2 => 'controller',
+  3 => 'catname',
+  4 => 'title',
+  5 => 'keywords',
+  6 => 'description',
+  7 => 'image',
+  8 => 'category',
+  9 => 'adList',
+  10 => 'bannerList',
+  11 => 'linkList',
+  12 => 'changyan',
+  13 => 'time',
+  14 => 'job',
+  15 => 'about',
+  16 => 'help',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 0  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `ismenu` = 1 ORDER BY `sort` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_ad` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_ad` WHERE  `type_id` = 1  AND `open` = 1 ORDER BY `sort` ASC LIMIT 8 [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_ad` WHERE  `type_id` = 5  AND `open` = 1 ORDER BY `sort` ASC LIMIT 8 [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_link` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_link` WHERE  `open` = 1 ORDER BY `sort` ASC [ RunTime:0.015001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 2 ORDER BY `sort` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 40 ORDER BY `sort` [ RunTime:0.015001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545357736 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.013000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-15'  AND `type` = 2 LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-21'  AND `type` = 1 LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.015001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025002s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.020001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `clt_article` WHERE  (  catid = 5 and (status = 1 or (status = 0 and createtime <1545357737)) ) ORDER BY `sort` ASC,`createtime` DESC LIMIT 7 [ RunTime:0.014001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_article` WHERE  (  catid = 5 and (status = 1 or (status = 0 and createtime <1545357737)) )  AND (  catid = 6 and (status = 1 or (status = 0 and createtime <1545357737)) ) ORDER BY `sort` ASC,`createtime` DESC,`sort` ASC,`createtime` DESC LIMIT 7 [ RunTime:0.023001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022002s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 27 LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_article` WHERE  (  catid = 5 and (status = 1 or (status = 0 and createtime <1545357737)) )  AND (  catid = 6 and (status = 1 or (status = 0 and createtime <1545357737)) )  AND (  catid = 27 and (status = 1 or (status = 0 and createtime <1545357737)) ) ORDER BY `sort` ASC,`createtime` DESC,`sort` ASC,`createtime` DESC,`sort` ASC,`createtime` DESC LIMIT 7 [ RunTime:0.013000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023002s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 36 LIMIT 1 [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_article` WHERE  (  catid = 5 and (status = 1 or (status = 0 and createtime <1545357737)) )  AND (  catid = 6 and (status = 1 or (status = 0 and createtime <1545357737)) )  AND (  catid = 27 and (status = 1 or (status = 0 and createtime <1545357737)) )  AND (  catid = 36 and (status = 1 or (status = 0 and createtime <1545357737)) ) ORDER BY `sort` ASC,`createtime` DESC,`sort` ASC,`createtime` DESC,`sort` ASC,`createtime` DESC,`sort` ASC,`createtime` DESC LIMIT 7 [ RunTime:0.014001s ]
+[ error ] [8]未定义数组索引: catdir[D:\phpStudy\PHPTutorial\WWW\smilexpress\runtime\temp\c829de1f4eca4c661601b5471beec402.php:313]
+[ error ] [8]未定义数组索引: logob[D:\phpStudy\PHPTutorial\WWW\smilexpress\runtime\temp\c829de1f4eca4c661601b5471beec402.php:344]
+---------------------------------------------------------------
+[ 2018-12-21T10:02:20+08:00 ] 127.0.0.1 GET shop.com/images/chukouwuliu2.png
+[运行时间：0.292016s] [吞吐率：3.42req/s] [内存消耗：2,813.57kb] [文件加载：82]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D; cMySa_admin_username=d5a8GE88tuMxrjOBvwH4pOIl3bji1AvhAKMmTOWuSQRjYQ; cMySa_siteid=d5a8GE88tuMxrjOBv1H__eJ1hL211gjkU6lyTuT-; cMySa_userid=c7913Ag9XoMAesqLwswojGhuCoiEFoUlkGLhw17I; cMySa_admin_email=c7913Ag9XoMAesqLwp9xg2g2UIyBEtAjkzbnlVmYA21rX5HqK34; cMySa_sys_lang=df8bw1cBPlvaJIE9DVDmkjhC0dY3LVK_w2Elwhw5XirQvg; sYQDUGqqzHrefersh_time=0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://shop.com/index.php?m=admin',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.019001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 2 ORDER BY `sort` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 40 ORDER BY `sort` [ RunTime:0.020002s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.016001s ]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'express.clt_' doesn't exist[D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\library\think\db\Connection.php:687]
+---------------------------------------------------------------
+[ 2018-12-21T10:02:21+08:00 ] 127.0.0.1 GET shop.com/images/zengzhiyewu2.png
+[运行时间：0.250014s] [吞吐率：4.00req/s] [内存消耗：2,813.57kb] [文件加载：82]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D; cMySa_admin_username=d5a8GE88tuMxrjOBvwH4pOIl3bji1AvhAKMmTOWuSQRjYQ; cMySa_siteid=d5a8GE88tuMxrjOBv1H__eJ1hL211gjkU6lyTuT-; cMySa_userid=c7913Ag9XoMAesqLwswojGhuCoiEFoUlkGLhw17I; cMySa_admin_email=c7913Ag9XoMAesqLwp9xg2g2UIyBEtAjkzbnlVmYA21rX5HqK34; cMySa_sys_lang=df8bw1cBPlvaJIE9DVDmkjhC0dY3LVK_w2Elwhw5XirQvg; sYQDUGqqzHrefersh_time=0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://shop.com/index.php?m=admin',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 2 ORDER BY `sort` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 40 ORDER BY `sort` [ RunTime:0.015000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.012001s ]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'express.clt_' doesn't exist[D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\library\think\db\Connection.php:687]
+---------------------------------------------------------------
+[ 2018-12-21T10:02:21+08:00 ] 127.0.0.1 GET shop.com/static/express/images/index_voice.png
+[运行时间：0.280016s] [吞吐率：3.57req/s] [内存消耗：2,716.74kb] [文件加载：75]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjJGazB5bWpibWZPUDdISEtybmJqdkE9PSIsInZhbHVlIjoiMzkycWcwOGp6cVpBOGZaZzZJMXNiVEpFbHlJdUd1eWhpdmhwSDJtQUVXbkRmQjVHUmFidm4xYUJiZlg5RE9wbVZubCtSajFBaGhqdWFrRE90K2J6bHd5WEFhdGJwYWRPOEVXTklHeTJ5Um5mZHVSZUxBbEpTbFAxdHZiQ1Nvbnp6SG5ZSTFBZWFIeUlyZkxTK3BzdG5UNVFHdXlydndIazlUSUxoZzRKandVPSIsIm1hYyI6Ijg1YmYyYmIzMGM2NWQ1OWFkOWQ5MWM3ODliNjU5YjlmYzY2OTNlNGRiNDZlNzdkYWEyMjhhYWU1OGE0NGM5ZDYifQ%3D%3D; cMySa_admin_username=d5a8GE88tuMxrjOBvwH4pOIl3bji1AvhAKMmTOWuSQRjYQ; cMySa_siteid=d5a8GE88tuMxrjOBv1H__eJ1hL211gjkU6lyTuT-; cMySa_userid=c7913Ag9XoMAesqLwswojGhuCoiEFoUlkGLhw17I; cMySa_admin_email=c7913Ag9XoMAesqLwp9xg2g2UIyBEtAjkzbnlVmYA21rX5HqK34; cMySa_sys_lang=df8bw1cBPlvaJIE9DVDmkjhC0dY3LVK_w2Elwhw5XirQvg; sYQDUGqqzHrefersh_time=0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://shop.com/static/express/css/layout.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'shop.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\smilexpress\thinkphp\tpl/dispatch_jump.tpl [ array (
+  0 => 'sys',
+  1 => 'action',
+  2 => 'controller',
+  3 => 'catname',
+  4 => 'title',
+  5 => 'keywords',
+  6 => 'description',
+  7 => 'image',
+  8 => 'category',
+  9 => 'adList',
+  10 => 'bannerList',
+  11 => 'linkList',
+  12 => 'changyan',
+  13 => 'time',
+  14 => 'job',
+  15 => 'about',
+  16 => 'help',
+  17 => 'code',
+  18 => 'msg',
+  19 => 'data',
+  20 => 'url',
+  21 => 'wait',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021001s ] mysql:host=106.12.199.28;port=3306;dbname=express;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 2 ORDER BY `sort` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 40 ORDER BY `sort` [ RunTime:0.015001s ]

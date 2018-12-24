@@ -1,0 +1,112 @@
+{include file="common/header"/}
+	<style type="text/css">
+		header img{
+			width: 100%;
+		}
+		.search_main{
+			padding:.4rem .2rem 1.5rem;
+			text-align: center;
+		}
+		.search_main h1{
+			position: relative;
+			font-size: .34rem;
+			line-height: .46rem;
+			margin-bottom: .4rem;
+			text-align: center;
+		}
+		#allmap{
+			height: 4.6rem;
+			width: 100%;
+			margin-bottom: .3rem;
+		}
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="{$image}"/>
+		</header>
+		<div class="search_main">
+			<h1>{$sys.title} </h1>
+			<div id="allmap"></div>
+			<div class="company_info">
+				<div class="company_info_flex">
+					<h1>{$sys.title}</h1>
+				</div>
+				<div class="company_info_flex">
+					<div>客服QQ : {$sys.qq}</div>
+					<div>投诉：{$sys.complain}</div>
+				</div>
+				<div class="company_info_flex">
+					<div>E-mail  : {$sys.email}</div>
+					<div>公司网址：{$sys.host}</div>
+				</div>
+				<div class="company_info_flex">
+					<label>地址：{$sys.ads}</label>
+				</div>
+				<div class="company_info_flex">
+					<img src="{$sys.qrcode}"/>
+				</div>
+			</div>
+		</div>
+
+		{include file="common/footer"/}
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=56srZYI3vAB9XzW2B0u544hHhsdWdE7X"></script>
+
+		<script type="text/javascript">
+            //创建和初始化地图函数：
+            function initMap(){
+                createMap();//创建地图
+                setMapEvent();//设置地图事件
+               // addMapControl();//向地图添加控件
+                addMapOverlay();//向地图添加覆盖物
+            }
+            function createMap(){
+                map = new BMap.Map("allmap");
+                map.centerAndZoom(new BMap.Point(120.133095,29.317717),16);
+            }
+            function setMapEvent(){
+                map.enableScrollWheelZoom();
+                map.enableKeyboard();
+                map.enableDragging();
+                map.enableDoubleClickZoom()
+            }
+            function addClickHandler(target,window){
+                target.addEventListener("click",function(){
+                    target.openInfoWindow(window);
+                });
+            }
+            function addMapOverlay(){
+                var markers = [
+
+                    {content:"沃虎国际",title:"沃虎国际",imageOffset: {width:-46,height:-21},position:{lat:29.317717,lng:120.133095}}
+                ];
+                for(var index = 0; index < markers.length; index++ ){
+                    var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+                    var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+                            imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+                        })});
+                    var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+                    var opts = {
+                        width: 200,
+                        title: markers[index].title,
+                        enableMessage: false
+                    };
+                    var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+                    marker.setLabel(label);
+                    addClickHandler(marker,infoWindow);
+                    map.addOverlay(marker);
+                };
+            }
+            //向地图添加控件
+            function addMapControl(){
+                var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+                scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+                map.addControl(scaleControl);
+                var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+                map.addControl(navControl);
+                var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+                map.addControl(overviewControl);
+            }
+            var map;
+            initMap();
+		</script>

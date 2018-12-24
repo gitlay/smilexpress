@@ -1,0 +1,328 @@
+{include file="common/header"/}
+	<script type="text/javascript" charset="utf-8">
+        mui.init();
+	</script>
+	<style>
+		.swiper-slide img {
+			width: 100%;
+		}
+
+		.swiper-pagination-bullet-active {
+			opacity: 1;
+			background: #FFF;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.home_search {
+			display: flex;
+			display: -webkit-flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.home_search label {
+			color: #ff6200;
+		}
+
+		.home_search_input {
+			margin-left: .2rem;
+			padding: 0rem .2rem;
+			border-radius: .2rem;
+			display: flex;
+			display: -webkit-flex;
+			align-items: center;
+			justify-content: center;
+			height: .5rem;
+			border: .02rem solid #959595;
+		}
+
+		.home_search_input i {
+			font-size: .26rem;
+			margin-right: .2rem;
+		}
+
+		.home_search_input input {
+			flex: 1;
+			-webkit-flex: 1;
+		}
+
+		.home_nav {
+			margin-top: .3rem;
+			display: flex;
+			display: -webkit-flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.home_nav_item {
+			flex: 1;
+			-webkit-flex: 1;
+			margin-left: .1rem;
+		}
+
+		.home_nav_item img {
+			width: 100%;
+		}
+
+		.home_nav_item:first-child {
+			margin-left: 0;
+		}
+
+		.wrapper_defalut {
+			padding: 0rem .3rem;
+		}
+
+		.wrapper_defalut h1 {
+			position: relative;
+			font-size: .3rem;
+			padding-left: .12rem;
+			display: block;
+			margin: .22rem 0rem;
+		}
+
+		.wrapper_defalut h1 span {
+			font-size: .22rem;
+			margin-left: .2rem;
+		}
+
+		.wrapper_defalut h1::after {
+			content: ' ';
+			position: absolute;
+			left: 0;
+			top: -.03rem;
+			margin-right: 5px;
+			height: .32rem;
+			width: .05rem;
+			background-color: #FF6200;
+		}
+
+		.wrapper_flex {
+			display: flex;
+			display: -webkit-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0rem .3rem;
+		}
+
+		.wrapper_flex_item {
+			padding: .16rem;
+			flex: 1;
+			-webkit-flex: 1;
+			background-color: #FFF;
+			margin-right: .1rem;
+			-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+		}
+
+		.wrapper_flex_item:last-child {
+			margin-right: 0rem;
+		}
+
+		.wrapper_float_item {
+			display: flex;
+			display: -webkit-flex;
+			align-items: center;
+			justify-content: center;
+			padding: .16rem;
+			flex: 1;
+			-webkit-flex: 1;
+			background-color: #FFF;
+			margin-right: .1rem;
+			-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+		}
+
+		.wrapper_float_item:last-child {
+			margin-right: 0rem;
+		}
+
+		.wrapper_float_item img {
+			height: 1.4rem;
+			width: 1.4rem;
+		}
+
+		.wrapper_float_item div {
+			flex: 1;
+			-webkit-flex: 1;
+			width: 0px;
+			margin-left: .2rem;
+		}
+
+		.wrapper_float_item div h1 {
+			font-size: .26rem;
+			text-align: center;
+			margin-bottom: .1rem;
+		}
+
+		.wrapper_float_item div p {
+			font-size: .22rem;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+
+		.wrapper_flex_item h1 {
+			font-size: .26rem;
+			text-align: center;
+			margin-bottom: .1rem;
+		}
+
+		.wrapper_flex_item p {
+			font-size: .22rem;
+			text-indent: 1em;
+			margin-bottom: .1rem;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+
+		.wrapper_flex_item img {
+			width: 100%;
+		}
+
+		.news_list {
+			background-color: #FFF;
+		}
+
+		.news_item {
+			padding: .3rem;
+			display: flex;
+			display: -webkit-flex;
+			justify-content: space-between;
+		}
+
+		.news_item label {
+			width: 60%;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+	</style>
+	<body>
+		<div class="main">
+			<!-- 轮播 s -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					{volist name="adList" id="vo" key="i"}
+					<div class="swiper-slide">
+						<img src="{$vo.pic}" />
+					</div>
+					{/volist}
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination"></div>
+			</div>
+			<!-- 轮播 e -->
+			<div class="wrapper center">
+				<div class="home_search">
+					<label>快递追踪:</label>
+					<div class="home_search_input">
+						<i class="mui-icon mui-icon-search"></i>
+						<input placeholder="描述内容" onblur="rde()"/>
+					</div>
+				</div>
+				<script>
+
+					function rde() {
+						var url = "  {:url('mobile/tracking/index',['catId'=>47] )}"
+						window.location.href = url;
+                    }
+				</script>
+				<div class="home_nav">
+					<div class="home_nav_item">
+						<img src="/static/express_mobile/image/kfrx.png" />
+					</div>
+					<div class="home_nav_item">
+						<a href="{:url('mobile/freight/index',['catId'=>45] )}">
+						<img src="/static/express_mobile/image/yfcx.png" />
+						</a>
+					</div>
+					<div class="home_nav_item">
+						<a href="{:url('mobile/order/index',['catId'=>46] )}">
+						<img src="/static/express_mobile/image/wsxd.png" />
+						</a>
+					</div>
+					<div class="home_nav_item">
+						<a href="{:url('mobile/feedback/index',['catId'=>48] )}">
+						<img src="/static/express_mobile/image/lyfk.png" />
+						</a>
+					</div>
+
+
+					<div class="home_nav_item">
+						<a href="{:url('mobile/download/index',['catId'=>43] )}">
+						<img src="/static/express_mobile/image/wjxz.png" />
+					</a>
+					</div>
+				</div>
+			</div>
+			<!-- 出口物流 s -->
+			<div class="wrapper_defalut">
+				<h1><a href="{:url('mobile/article/index',['catId'=>32] )}">出口物流</a> </h1>
+			</div>
+			<div class="wrapper_flex">
+				{volist name="express" id="vo"}
+				<div class="wrapper_flex_item">
+					<h1>{$vo.catname}</h1>
+					<p>{$vo.description}</p>
+					<img src="{$vo.image}" />
+				</div>
+				{/volist}
+			</div>
+			<!-- 出口物流 e -->
+			<!-- 增值业务 s -->
+			<div class="wrapper_defalut">
+				<h1><a href="{:url('mobile/article/index',['catId'=>37] )}">增值服务</a> </h1>
+			</div>
+			<div class="wrapper_flex">
+				{volist name="increment" id="vo"}
+				<div class="wrapper_float_item">
+					<img src="/static/express_mobile/image/tab3.png" />
+					<div>
+						<h1>{$vo.catname}</h1>
+						<p>{$vo.description}</p>
+					</div>
+				</div>
+				{/volist}
+			</div>
+			<!-- 增值业务 e -->
+			<!-- 新闻列表 s -->
+			<div class="wrapper_defalut">
+				<h1><a href="{:url('mobile/article/index',['catId'=>1] )}">新闻中心</a>
+					{volist name="news" id="vo"}
+					<span>{$vo.catname}</span>
+					{/volist}
+				</h1>
+			</div>
+			{volist name="news" id="v" }
+			<div class="news_list" {gt name="i" value="1"}style="display:none"{/gt}>
+			{volist name="v['content']" id="vo" key="k"}
+			<a href="{:url('mobile/article/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}">
+				<div class="news_item">
+
+						<label>{$vo.title}</label>
+						<p>{:toDate($vo["createtime"],'Y-m-d')}</p>
+
+				</div>
+			</a>
+			{/volist}
+			</div>
+			{/volist}
+			<!-- 新闻列表 e -->
+		</div>
+
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+        }
+    })
+</script>
+		{include file="common/footer"/}

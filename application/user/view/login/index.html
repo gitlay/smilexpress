@@ -1,86 +1,71 @@
-{include file="common/head"/}
-<body>
-<style>
-    .layui-form-mid{padding: 0!important;}
-</style>
-<div class="header">
-    <div class="main">
-        <a class="logo" href="{:url('index/index')}" title="CLTPHP">CLTPHP</a>
-        <div class="nav-user">
-        </div>
-    </div>
-</div>
-<div class="main layui-clear">
-    <div class="fly-panel fly-panel-user" pad20>
-        <div class="layui-tab layui-tab-brief">
-            <ul class="layui-tab-title">
-                <li class="layui-this">登入</li>
-                <li><a href="{:url('reg')}">注册</a></li>
-            </ul>
-            <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
-                <div class="layui-tab-item layui-show">
-                    <div class="layui-form layui-form-pane">
-                        <form method="post">
-                            <div class="layui-form-item">
-                                <label for="username" class="layui-form-label">帐　号</label>
-                                <div class="layui-input-inline">
-                                    <input type="text" id="username" name="username" required lay-verify="required" placeholder="请输入邮箱或者手机号" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label for="L_pass" class="layui-form-label">密　码</label>
-                                <div class="layui-input-inline">
-                                    <input type="password" id="L_pass" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            {if $sys.code=='open'}
-                            <div class="layui-form-item">
-                                <label for="L_vercode" class="layui-form-label">验证码</label>
-                                <div class="layui-input-inline">
-                                    <input type="text" id="L_vercode" name="vercode" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
-                                </div>
-                                <div class="layui-form-mid captcha">
-                                    <img src="{:url('verify')}" alt="captcha" onclick="this.src='{:url("verify")}?'+'id='+Math.random()"/>
-                                </div>
-                            </div>
-                            {/if}
-                            <div class="layui-form-item">
-                                <button type="button" class="layui-btn" lay-filter="sub" lay-submit>立即登录</button>
-                                <span style="padding-left:20px;"><a href="{:url('forget')}">忘记密码？</a></span>
-                            </div>
-                            <div class="layui-form-item fly-form-app">
-                                <span>或者使用社交账号登入</span>
-                                {volist name="plugin" id="v"}
-                                <a href="{:url('oauth/'.$v['code'])}" id="qqLogin" class="iconfont icon-qq" title="{$v.name}"></a>
-                                {/volist}
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{include file="common/footer"/}
+<!DOCTYPE html>
+<html lang="zh"  style="width:100%;height:100%;">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>{$title}</title>
+	<meta name="keywords" content="{$keywords}">
+	<meta name="description" content="{$description}">
+	<script type="text/javascript" src="/static/express/js/jquery1.42.min.js"></script>
+	<script type="text/javascript" src="/static/express/js/jquery.SuperSlide.2.1.1.js"></script>
+	<link rel="stylesheet" href="/static/express/css/layout.css">
+	<title>Document</title>
+</head>
+<body style="width:100%;height:100%;">
+	<div class="loginbox">
+		<div class="login">
+			<form action="">
+				<h3>欢迎登录</h3>
+				<ul>
+					<li>
+						<img src="/static/express/images/bgi-58.png" alt="" class="img1" >
+						<input type="text" placeholder="请输入账号" id="mobile">
+					</li>
+					<li>
+						<img src="/static/express/images/bgi-59.png" alt="" class="img1">
+						<input type="password" placeholder="请输入密码" id="password">
+					</li>
+					<li class="li1">
+						<img src="/static/express/images/bgi-60.png" alt="" class="img1">
+						<input type="text" placeholder="请输入验证码" class="in1" id="vercode">
+						<div class="ma">
+							<img src="{:url('verify')}" alt="captcha" onclick="this.src='{:url("verify")}?'+'id='+Math.random()"/>
+
+							<a href="" class="a1">看不清，换一张</a>
+						</div>
+					</li>
+					<li class="li1">
+						<input type="button" class="btn" value="登录">
+						<a href="{:url('user/login/forget')}" class="a2">忘记密码？</a>
+						<a href="{:url('user/login/reg')}" class="a3">立即注册</a>
+						
+					</li>
+				</ul>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
+
 <script>
-    layui.use(['form', 'layer'], function () {
-        var form = layui.form,$ = layui.jquery;
-        // 登录提交监听
-        form.on('submit(sub)', function (data) {
-            var loading = layer.load(1, {shade: [0.1, '#fff']});
-            $.post("{:url('index')}",data.field,function(res){
-                layer.close(loading);
-                if(res.code > 0){
-                    layer.msg(res.msg,{time:1000,icon:1},function(){
-                        location.href = "{:url('index/index')}";
-                    });
-                }else{
-                    layer.msg(res.msg,{time:1000,icon:2});
-                    $('.captcha img').attr('src','{:url("verify")}?id='+Math.random());
-                }
-            });
-        })
+
+    $('.btn').click(function () {
+        var mobile = $('#mobile').val();
+        var password = $('#password').val();
+        var vercode = $('#vercode').val();
+
+        $.post("{:url('index')}",{username:mobile,password:password,vercode:vercode},function(res){
+
+            if(res.code > 0){
+                alert(res.msg)
+                location.href = "{:url('home/index/index')}";
+
+            }else{
+                alert(res.msg)
+                //    $('.captcha img').attr('src','{:url("verify")}?id='+Math.random());
+            }
+        });
     })
 </script>
-</body>
-</html>

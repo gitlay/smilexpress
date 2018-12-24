@@ -1,0 +1,27 @@
+<!--底部导航-->
+<nav class="bar-footer">
+    <a href="/" class="bar-footer-item ">
+        <img src="/static/express_mobile/image/icon-1{eq name="catId" value="0"}-act{/eq}.png" />
+        <label>首页</label>
+    </a>
+    <a href="{:url('mobile/about/index',['catId'=>2] )}" class="bar-footer-item">
+        <img src="/static/express_mobile/image/icon-2{eq name="parentid" value="2"}-act{/eq}{eq name="catId" value="2"}-act{/eq}.png" />
+        <label>关于我们</label>
+    </a>
+    <a href="{:url('mobile/index/search')}" class="bar-footer-item">
+        <img class="big-item" src="/static/express_mobile/image/icon-3.png" />
+        <label>站内搜索</label>
+    </a>
+    <a href="{:url('mobile/about/index',['catId'=>40] )}"  class="bar-footer-item">
+        <img src="/static/express_mobile/image/icon-4{eq name="parentid" value="40"}-act{/eq}{eq name="catId" value="40"}-act{/eq}.png" />
+        <label>帮助支持</label>
+    </a>
+    <a href="#" class="bar-footer-item">
+        <img src="/static/express_mobile/image/icon-5.png" />
+        <label>个人中心</label>
+    </a>
+</nav>
+<!--底部导航-->
+</body>
+
+</html>

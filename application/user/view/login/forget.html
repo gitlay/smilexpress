@@ -1,91 +1,90 @@
-{include file="common/head"/}
-<body>
-<div class="header">
-    <div class="main">
-        <a class="logo" href="{:url('index/index')}" title="CLTPHP">CLTPHP</a>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="zh"  style="width:100%;height:100%;">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>{$title}</title>
+	<meta name="keywords" content="{$keywords}">
+	<meta name="description" content="{$description}">
+	<script type="text/javascript" src="/static/express/js/jquery1.42.min.js"></script><script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<link rel="stylesheet" href="/static/express/css/layout.css">
 
-<div class="main layui-clear">
-    <div class="fly-panel fly-panel-user" pad20>
-        <div class="layui-tab layui-tab-brief" lay-filter="user">
-            <ul class="layui-tab-title">
-                <li class="layui-this">找回密码</li>
-            </ul>
-            <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
-                <div class="layui-tab-item layui-show">
-                    <div class="layui-form layui-form-pane">
-                        <form method="post">
-                            <div class="layui-form-item">
-                                <label for="L_email" class="layui-form-label">邮　　箱</label>
-                                <div class="layui-input-inline">
-                                    <input type="text" id="L_email" name="email" lay-verify="required" placeholder="请输入邮箱帐号" autocomplete="off" class="layui-input">
+</head>
+<body style="width:100%;height:100%;">
+	<div class="loginbox">
+		<div class="login">
+			<form action="">
+				<h3>找回密码</h3>
+				<ul>
+					<li>
+						<img src="/static/express/images/bgi-58.png" alt="" class="img1">
+						<input type="text" placeholder="+86 请输入手机号" id="mobile">
+					</li>
+					<li class="li1 li2">
+						<img src="/static/express/images/bgi-60.png" alt="" class="img1">
+						<input type="text" placeholder="请输入验证码" class="in1">
+						<div class="ma">
+							<input type="button" value="获取验证码" class="in2" onclick="sendCode(this)">
+						</div>
+					</li>
+					<li>
+						<img src="/static/express/images/bgi-59.png" alt="" class="img1">
+						<input type="password" placeholder="请输入密码" id="password">
+					</li>
+					
+				<li class="li1">
+						<input type="button" class="btn" value="确认">
+					</li>
+				</ul>
+			</form>
+		</div>
+	</div>
+</body>
 
-                                </div>
-                                <button type="button" class="layui-btn layui-btn-normal" id="sentEmail">发送</button>
-                            </div>
-                            <div class="layui-form-item">
-                                <label for="L_vercode" class="layui-form-label">验  证  码</label>
-                                <div class="layui-input-inline">
-                                    <input type="text" id="L_vercode" name="code" lay-verify="required" placeholder="请输入您收到的验证码" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label for="L_pass" class="layui-form-label">密　　码</label>
-                                <div class="layui-input-inline">
-                                    <input type="password" id="L_pass" name="password" lay-verify="required" placeholder="6到16个字符" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label for="L_repass" class="layui-form-label">确认密码</label>
-                                <div class="layui-input-inline">
-                                    <input type="password" id="L_repass" name="password2" lay-verify="required" placeholder="请输入确认密码" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <button type="button" class="layui-btn" lay-filter="sub" lay-submit>提交</button>
-                                <span style="padding-left:20px;"><a href="{:url('index')}">登录</a></span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{include file="common/footer"/}
 <script>
 
-    layui.use('form', function () {
-        var form = layui.form,$ = layui.jquery;
-        $('#sentEmail').click(function () {
-            var email = $('#L_email').val();
-            var loading = layer.load(1, {shade: [0.1, '#fff']});
-            $.post("{:url('sendEmail')}",{email:email},function(res){
-                layer.close(loading);
-                if(res.code > 0){
-                    layer.msg(res.msg,{time:1000,icon:1});
-                }else{
-                    layer.msg(res.msg,{time:1000,icon:2});
-                }
-            });
+    $('.btn').click(function () {
+        var mobile = $('#mobile').val();
+        var password = $('#password').val();
 
+        $.post("{:url('forget')}",{username:mobile,password:password},function(res){
+
+            if(res.code > 0){
+                alert(res.msg)
+                location.href = "{:url('user/login/index')}";
+
+            }else{
+                alert(res.msg)
+                //    $('.captcha img').attr('src','{:url("verify")}?id='+Math.random());
+            }
         });
-        // 登录提交监听
-        form.on('submit(sub)', function (data) {
-            var loading = layer.load(1, {shade: [0.1, '#fff']});
-            $.post("{:url('forget')}",data.field,function(res){
-                layer.close(loading);
-                if(res.code > 0){
-                    layer.msg(res.msg,{time:1800,icon:1},function(){
-                        location.href = "{:url('index/index')}";
-                    });
-                }else{
-                    layer.msg(res.msg,{time:1800,icon:2});
-                }
-            });
-        })
     })
 </script>
-</body>
+
+<script>
+
+ var clock = '';
+ var nums = 60;
+ var btn;
+ function sendCode(thisBtn){ 
+		btn = thisBtn;
+		btn.disabled = true; //将按钮置为不可点击
+		btn.value = nums+'秒后可重新获取';
+		clock = setInterval(doLoop, 1000); //一秒执行一次
+		}
+		function doLoop()
+		{
+		nums--;
+		if(nums > 0){
+		btn.value = nums+'秒后可重新获取';
+		}else{
+		clearInterval(clock); //清除js定时器
+		btn.disabled = false;
+		btn.value = '获取验证码';
+		nums = 60; //重置时间
+	}
+ }
+</script>
+
 </html>

@@ -18,12 +18,12 @@
                             <input type="text"name="name" lay-verify="required" placeholder="{:lang('pleaseEnter')}{:lang('websiteName')}" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
+            <!--        <div class="layui-form-item">
                         <label class="layui-form-label">{:lang('WebsiteUrl')}</label>
                         <div class="layui-input-4">
                             <input type="text" name="url" lay-verify="url" placeholder="{:lang('pleaseEnter')}{:lang('WebsiteUrl')}" class="layui-input">
                         </div>
-                    </div>
+                    </div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">顶部LOGO</label>
                         <input type="hidden" name="logo" id="logo">
@@ -65,6 +65,34 @@
                             </div>
                         </div>
                     </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">微信</label>
+                        <input type="hidden" name="weixin" id="logoc">
+                        <div class="layui-input-block">
+                            <div class="layui-upload">
+                                <button type="button" class="layui-btn layui-btn-primary" id="logoBtnc"><i class="icon icon-upload3"></i>点击上传</button>
+                                <div class="layui-upload-list">
+                                    <img class="layui-upload-img" id="cltLogoc">
+                                    <p id="demoTextc"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">微博</label>
+                        <input type="hidden" name="weibo" id="logod">
+                        <div class="layui-input-block">
+                            <div class="layui-upload">
+                                <button type="button" class="layui-btn layui-btn-primary" id="logoBtnd"><i class="icon icon-upload3"></i>点击上传</button>
+                                <div class="layui-upload-list">
+                                    <img class="layui-upload-img" id="cltLogod">
+                                    <p id="demoTextd"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="layui-form-item">
                         <label class="layui-form-label">{:lang('recordNum')}</label>
@@ -99,13 +127,13 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">QQ</label>
                         <div class="layui-input-3">
-                            <input type="text" name="complain" placeholder="请输入QQ" class="layui-input">
+                            <input type="text" name="qq" placeholder="请输入QQ" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">网址</label>
                         <div class="layui-input-3">
-                            <input type="text" name="complain" placeholder="请输入网址" class="layui-input">
+                            <input type="text" name="host" placeholder="请输入网址" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -188,6 +216,8 @@
         $('#cltLogo').attr('src',seytem.logo);
         $('#cltLogoa').attr('src',seytem.logoa);
         $('#cltLogob').attr('src',seytem.qrcode);
+        $('#cltLogoc').attr('src',seytem.weixin);
+        $('#cltLogod').attr('src',seytem.weibo);
         //普通图片上传
         var uploadInst = upload.render({
             elem: '#logoBtn'
@@ -271,6 +301,62 @@
                 demoTextb.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
                 demoTextb.find('.demo-reload').on('click', function(){
                     uploadInstb.upload();
+                });
+            }
+        });
+
+        var uploadInstc = upload.render({
+            elem: '#logoBtnc'
+            ,url: '{:url("UpFiles/upload")}'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#cltLogoc').attr('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                //上传成功
+                if(res.code>0){
+                    $('#logoc').val(res.url);
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoTextc = $('#demoTextc');
+                demoTextc.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoTextc.find('.demo-reload').on('click', function(){
+                    uploadInstc.upload();
+                });
+            }
+        });
+
+        var uploadInstd = upload.render({
+            elem: '#logoBtnd'
+            ,url: '{:url("UpFiles/upload")}'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#cltLogod').attr('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                //上传成功
+                if(res.code>0){
+                    $('#logod').val(res.url);
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoTextd = $('#demoTextd');
+                demoTextd.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoTextd.find('.demo-reload').on('click', function(){
+                    uploadInstc.upload();
                 });
             }
         });

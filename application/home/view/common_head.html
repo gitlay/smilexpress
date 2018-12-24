@@ -16,7 +16,11 @@
     <script src="/static/express/js/koala.min.1.5.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
 </head>
-
+<style>
+    .Breadcrumb a {
+        color: #000000;
+    }
+</style>
 <body>
 <section>
     <div class="top">
@@ -62,7 +66,7 @@
                         {volist name="category" id="vo"}
                         <li>
                             <a href="#">{$vo.catname}</a>
-                            <ul class="sub_nav2">
+                            <ul class="sub_nav{lt name="i" value="5"}2{else/}5{/lt}">
                                 {volist name="$vo.sub" id="v"}
                                 <li>
 
@@ -107,18 +111,18 @@
                 <div class="number">
                     <div class="numWrap txt_cent color_f  ">
                         <div class="clear up">
-                            <b class="num_a">0</b>
-                            <b class="num_b">5</b>
-                            <b class="num_c">7</b>
-                            <b class="num_d">9</b>
-                            <b class="num_e">8</b>
-                            <b class="num_f">1</b>
-                            <b class="num_g">5</b>
-                            <b class="num_h">3</b>
-                            <b class="num_i">1</b>
-                            <b class="num_j">2</b>
-                            <b class="num_l">0</b>
-                            <b class="num_m">0</b>
+                            <b class="num_a">{$sys.tel.0}</b>
+                            <b class="num_b">{$sys.tel.1}</b>
+                            <b class="num_c">{$sys.tel.2}</b>
+                            <b class="num_d">{$sys.tel.3}</b>
+                            <b class="num_e">{$sys.tel.4}</b>
+                            <b class="num_f">{$sys.tel.5}</b>
+                            <b class="num_g">{$sys.tel.6}</b>
+                            <b class="num_h">{$sys.tel.7}</b>
+                            <b class="num_i">{$sys.tel.8}</b>
+                            <b class="num_j">{$sys.tel.9}</b>
+                            <b class="num_l">{$sys.tel.10}</b>
+                            <b class="num_m">{$sys.tel.10}</b>
                         </div>
                     </div>
                     <span class="unit-title color_f ">客户热线</span>
@@ -224,7 +228,7 @@
         <div class="track cent position_a">
             <div class="cent track_cent">
                 <div class="trackWrap position_r side-hide " id="side">
-                    <form action="http://114.215.175.26/cgi-bin/GInfo.dll?" method="get" target="_blank">
+                    <form action="" method="get" target="_blank">
                         <b>快件追踪</b>
                         <div class="textarea_wrap">
                             <input name="MfcISAPICommand" type="hidden" value="EmmisTrack">

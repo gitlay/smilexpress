@@ -3,11 +3,13 @@ namespace app\user\controller;
 use think\Controller;
 use think\facade\Request;
 use think\captcha\Captcha;
+use think\facade\Session;
+
 class Login extends Controller{
     protected $sys;
     public function initialize(){
         if (session('user.id')) {
-            $this->redirect('index/index');
+           // $this->redirect('home/index/index');
         }
         $this->sys = cache('System');
         $this->assign('sys',$this->sys);
@@ -17,12 +19,12 @@ class Login extends Controller{
             $table = db('users');
             $username = input('username');
             $password = input('password');
-            if($this->sys['code']=='open'){
-                $code = input('vercode');
-                if(!$this->check($code)){
-                    return array('code' => 0, 'msg' => '验证码错误');
-                }
+
+            $code = input('vercode');
+            if(!$this->check($code)){
+                return array('code' => 0, 'msg' => '验证码错误');
             }
+
             if(!$username || !$password){
                 return array('code'=>0,'msg'=>'请填写账号或密码');
             }
@@ -47,6 +49,9 @@ class Login extends Controller{
             $plugin = db('plugin')->where(['type'=>'login','status'=>1])->select();
             $this->assign('plugin', $plugin);
             $this->assign('title','会员登录');
+            if(isMobile()){
+                return $this->fetch(APP_PATH.request()->module().'/viewMobile/index.html');
+            }
             return $this->fetch();
         }
     }
@@ -67,6 +72,11 @@ class Login extends Controller{
         return captcha_check($code);
     }
 
+    public function logout(){
+        Session::delete('user');
+        $this->redirect(url('home/index/index'));
+    }
+
     public function reg(){
         if(Request::isAjax()) {
             $data = input('post.');
@@ -77,36 +87,30 @@ class Login extends Controller{
                 }
             }
             $is_validated = 0 ;
-            if(is_email($data['email'])){
-                $is_validated = 1;
-                $data['email_validated'] = 1;
-                if(get_user_info($data['email'],1)){
-                    return array('code'=>-1,'msg'=>'邮箱账号已存在');
-                }
-            }
-            if(is_mobile_phone($data['email'])){
+
+            if(is_mobile_phone($data['mobile'])){
                 $is_validated = 1;
                 $data['mobile_validated'] = 1;
-                $data['mobile'] = $data['email']; //手机注册
+                $data['email'] = $data['mobile']; //手机注册
                 unset($data['email']);
                 if(get_user_info($data['mobile'],2)){
                     return array('code'=>-1,'msg'=>'手机账号已存在');
                 }
             }
             if($is_validated != 1){
-                return array('code'=>0,'msg'=>'请用手机号或邮箱注册');
+                return array('code'=>0,'msg'=>'请用手机号注册');
             }
-            if(!$data['username'] || !$data['password']){
-                return array('code'=>-1,'msg'=>'请输入昵称或密码');
+            if(!$data['mobile'] || !$data['password']){
+                return array('code'=>-1,'msg'=>'请输入手机号或密码');
             }
             //验证两次密码是否匹配
-            if($data['password'] != $data['password2']){
+           /* if($data['password'] != $data['password2']){
                 return array('code'=>-1,'msg'=>'两次输入密码不一致');
-            }
+            }*/
             unset($data['password2']);
             unset($data['vercode']);
             //验证是否存在用户名
-
+            $data['username'] = $data['mobile'];
             $data['password'] = md5($data['password']);
             $data['reg_time'] = time();
             $id = db('users')->insertGetId($data);
@@ -120,17 +124,20 @@ class Login extends Controller{
             $plugin = db('plugin')->where(['type' => 'login', 'status' => 1])->select();
             $this->assign('plugin', $plugin);
             $this->assign('title', '会员注册');
+            if(isMobile()){
+                return $this->fetch(APP_PATH.request()->module().'/viewMobile/reg.html');
+            }
             return $this->fetch();
         }
     }
 
     public function forget(){
         if(request()->isPost()) {
-            $sender = input('email');
+            $sender = input('username');
             $code =input('code');
             $inValid = true;  //验证码失效
             if(!$code){
-                return array('code'=>-1,'msg'=>'请输入邮件验证码');
+               // return array('code'=>-1,'msg'=>'请输入邮件验证码');
             }
             $data = session('validate_code');
             $timeOut = $data['time'];
@@ -140,9 +147,9 @@ class Login extends Controller{
             $password = input('password');
             $password2 = input('password2');
             if($password != $password2){
-                return array('code'=>-1,'msg'=>'两次输入密码不一致');
+               // return array('code'=>-1,'msg'=>'两次输入密码不一致');
             }
-            if(empty($data)){
+          /*  if(empty($data)){
                 return array('code'=>-1,'msg'=>'请先获取验证码');
             }elseif($timeOut < time()){
                 return array('code'=>-1,'msg'=>'验证码已超时失效');
@@ -151,11 +158,18 @@ class Login extends Controller{
             }else{
                 $data['is_check'] = 1; //标示验证通过
                 session('validate_code',$data);
-                db('users')->where('email',$sender)->update(['password'=>md5($password)]);
+                db('users')->where('username',$sender)->update(['password'=>md5($password)]);
                 return array('code'=>1,'msg'=>'密码找回成功！');
-            }
+            }*/
+            $data['is_check'] = 1; //标示验证通过
+            session('validate_code',$data);
+            db('users')->where('username',$sender)->update(['password'=>md5($password)]);
+            return array('code'=>1,'msg'=>'密码找回成功！');
         }else{
             $this->assign('title','找回密码');
+            if(isMobile()){
+                return $this->fetch(APP_PATH.request()->module().'/viewMobile/forget.html');
+            }
             return $this->fetch();
         }
     }

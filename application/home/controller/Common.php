@@ -111,26 +111,23 @@ class Common extends Controller{
         if ($with_content==0){
             return  $child;
         }
-        $model = db('article');
+
         foreach ($child as $k=>$v){
             // echo $v['id'];
-            $child[$k]['content'] = $this->getContent($v['id'],$model);
+            $child[$k]['content'] = $this->getContent($v['id'],db('article'));
         }
 
         return  $child;
     }
 
     public function getContent($cat_id,$model){
-        $arrchildid = db('category')->where(['id'=>$cat_id])->value('arrchildid');
-        $map = ' ';
-        if($arrchildid!=$cat_id){
-            $map .= 'catid in ($arrchildid)';
-        }else{
-            $map .= 'catid = '.$cat_id;
-        }
-        $map .= ' and (status = 1 or (status = 0 and createtime <'.time().'))';
 
-        return $list = $model->where($map)->order('sort asc,createtime desc')->limit(7)->select();
+
+        $map = 'catid = '.$cat_id.' and (status = 1 or (status = 0 and createtime <'.time().'))';
+
+        $list = $model->where($map)->order('sort asc,createtime desc')->limit(7)->select();
+        // $model->getLastSql();
+        return $list;
     }
     public function _empty(){
         return $this->error('空操作，返回上次访问页面中...');

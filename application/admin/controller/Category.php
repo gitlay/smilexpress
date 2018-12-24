@@ -144,6 +144,7 @@ class Category extends Common
 
         $record = $this->categorys[$id];
         $record['imgUrl'] = imgUrl($record['image']);
+        $record['imgUrla'] = imgUrl($record['imagea']);
         $record['readgroup'] = explode(',',$record['readgroup']);
         $parentid =	intval($record['parentid']);
         $result = $this->categorys;

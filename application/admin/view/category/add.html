@@ -43,7 +43,7 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label">栏目图片</label>
+            <label class="layui-form-label">PC栏目图片</label>
             <input type="hidden" name="image" id="image">
             <div class="layui-input-block">
                 <div class="layui-upload">
@@ -51,6 +51,19 @@
                     <div class="layui-upload-list">
                         <img class="layui-upload-img" id="cateImage">
                         <p id="demoText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">手机栏目图片</label>
+            <input type="hidden" name="imagea" id="imagea">
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-primary" id="cateBtna"><i class="icon icon-upload3"></i>点击上传</button>
+                    <div class="layui-upload-list">
+                        <img class="layui-upload-img" id="cateImagea">
+                        <p id="demoTexta"></p>
                     </div>
                 </div>
             </div>
@@ -176,7 +189,27 @@
                 });
             }
         });
-
+        var uploadInsta = upload.render({
+            elem: '#cateBtna',
+            url: '{:url("UpFiles/upload")}',
+            done: function(res){
+                if(res.code>0){
+                    $('#imagea').val(res.url);
+                    $('#cateImagea').attr('src', res.url);
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            },
+            error: function(){
+                //演示失败状态，并实现重传
+                var demoTexta = $('#demoTexta');
+                demoTexta.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoTexta.find('.demo-reload').on('click', function(){
+                    uploadInsta.upload();
+                });
+            }
+        });
         form.on('submit(submit)', function (data) {
             var loading = layer.load(1, {shade: [0.1, '#fff']});
             $.post("{:url('insert')}", data.field, function (res) {

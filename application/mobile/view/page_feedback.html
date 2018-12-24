@@ -1,0 +1,213 @@
+{include file="common/header"/}
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<style type="text/css">
+		header img {
+			width: 100%;
+		}
+		
+		.qs_main {
+			background-color: #FFF;
+			padding: .2rem .2rem 1.5rem;
+		}
+		
+		.problem_info {
+			padding: .3rem;
+		}
+		
+		.problem_info h1 {
+			position: relative;
+			font-size: .34rem;
+			line-height: .46rem;
+			margin-bottom: .2rem;
+		}
+		
+		.problem_info label {
+			font-size: .24rem;
+			color: #999999;
+			display: block;
+			padding-bottom: .2rem;
+			border-bottom: 1px solid #c5c4c3;
+			margin-bottom: .2rem;
+		}
+		
+		.problem_info p {
+			line-height: .36rem;
+			text-indent: 2em;
+		}
+		
+		.select-row {
+			font-family: 'Helvetica Neue', Helvetica, sans-serif;
+			line-height: 1.1;
+			padding: 11px 15px;
+			display: block;
+		}
+		
+		.mui-btn {
+			padding: 6px 20px;
+		}
+		
+		.mui-btn-primary {
+			background-color: #FF6200;
+			border: 1px solid #FF6200;
+		}
+		
+		.mui-btn-blue.mui-active:enabled,
+		.mui-btn-blue:enabled:active,
+		.mui-btn-primary.mui-active:enabled,
+		.mui-btn-primary:enabled:active,
+		input[type=submit].mui-active:enabled,
+		input[type=submit]:enabled:active {
+			color: #fff;
+			border: 1px solid #FF6200;
+			background-color: #FF6200;
+		}
+		
+		.mui-btn-danger.mui-active:enabled,
+		.mui-btn-danger:enabled:active,
+		.mui-btn-negative.mui-active:enabled,
+		.mui-btn-negative:enabled:active,
+		.mui-btn-red.mui-active:enabled,
+		.mui-btn-red:enabled:active {
+			color: #fff;
+			border: 1px solid #595757;
+			background-color: #595757;
+		}
+		
+		.mui-btn-danger {
+			background-color: #595757;
+			border: 1px solid #595757;
+		}
+		
+		.query_result {
+			margin-top: .3rem;
+		}
+		
+		.query_result h1 {
+			font-size: .3rem;
+			color: #FF6200;
+			margin-bottom: .2rem;
+		}
+		
+		.query_result p {
+			font-size: .26rem;
+			line-height: .38rem;
+			color: #595757;
+			text-indent: 1em;
+		}
+		
+		.query_result h1 span {
+			font-size: .24rem;
+			color: #777777;
+		}
+		
+		.result_list {
+			padding: .1rem;
+			box-sizing: border-box;
+			height: 4.3rem;
+			border: 1px solid #9fa0a0;
+		}
+		
+		.result_list textarea {
+			height: 100%;
+			width: 100%;
+		}
+		
+		.query_bottom {
+			margin-top: .2rem;
+			text-align: center;
+		}
+		
+		.query_bottom button {
+			width: 2rem;
+			height: .6rem;
+			background-color: #FF6200;
+			color: #FFF;
+		}
+		/*.mui-input-row{
+			margin-bottom: .2rem;
+		}
+		.mui-input-row input{
+			border: 1px solid #898989!important;
+		}*/
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="{$image}"/>
+		</header>
+		<div class="qs_main">
+			<div class="query_result">
+				<p>支持多单号查询"快件追踪"查询框内输入运单号。一次最多跟踪十个单号，使用斜杠"/"或"回车键"分隔。</p>
+			</div>
+			<div class="query_result">
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>您的姓名：</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入您的姓名">
+					</div>
+					<div class="mui-input-row">
+						<label>联系Email：</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入您的Email">
+					</div>
+					<div class="mui-input-row">
+						<label>所在地区：</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入您的所在地区">
+					</div>
+					<div class="mui-input-row">
+						<label>联系电话：</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入您的联系电话">
+					</div>
+					<div class="mui-input-row">
+						<label>意见和建议：</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入您的意见和建议">
+					</div>
+					<div class="mui-button-row">
+						<button type="button" class="mui-btn mui-btn-primary">确认</button>
+						<button type="button" class="mui-btn mui-btn-danger">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	<script type="text/javascript">
+		function chooseOne() {
+			var picker = new mui.PopPicker();
+			picker.setData([{
+				value: "first",
+				text: "中国"
+			}, {
+				value: "second",
+				text: "美国"
+			}, {
+				value: "third",
+				text: "日本"
+			}, {
+				value: "fourth",
+				text: "韩国"
+			}, {
+				value: "fifth",
+				text: "加拿大"
+			}])
+			picker.show(function(SelectedItem) {
+				console.log(SelectedItem[0].text)
+				$('#mudidi').text(SelectedItem[0].text)
+			})
+		}
+
+		function chooseTwo() {
+			var picker = new mui.PopPicker();
+			picker.setData([{
+				value: "first",
+				text: "包裹"
+			}, {
+				value: "second",
+				text: "包裹B"
+			}])
+			picker.show(function(SelectedItem) {
+				console.log(SelectedItem[0].text)
+				$('#kjlx').text(SelectedItem[0].text)
+			})
+		}
+	</script>
+
+		{include file="common/footer"/}

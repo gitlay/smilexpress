@@ -1,0 +1,64 @@
+{include file="common/header"/}
+	<style type="text/css">
+		header img{
+			width: 100%;
+		}
+		.search_main{
+			padding: .8rem .4rem 1.5rem;
+			text-align: center;
+		}
+		.search_input{
+			height: .8rem;
+			width: 100%;
+			border: .02rem solid #797979;
+			display: flex;
+			display: -webkit-flex;
+			margin-bottom: 2rem;
+		}
+		.search_input input{
+			padding-left: .1rem;
+			flex: 1;
+			-webkit-flex: 1;
+		}
+		.search_input button{
+			background-color: #ff6200;
+			color: #FFF;
+			width: 1.08rem;
+			border-radius: 0rem;
+		}
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="{$image}"/>
+		</header>
+		<div class="search_main">
+			<form action="{:url('mobile/index/search')}" method="post">
+			<div class="search_input">
+
+					<input type="text" name="keyword"><button type="submit"  >搜索</button>
+
+			</div>
+			</form>
+
+			<div class="company_info">
+				<div class="company_info_flex">
+					<h1>{$sys.title}</h1>
+				</div>
+				<div class="company_info_flex">
+					<div>客服QQ : {$sys.qq}</div>
+					<div>投诉：{$sys.complain}</div>
+				</div>
+				<div class="company_info_flex">
+					<div>E-mail  : {$sys.email}</div>
+					<div>公司网址：{$sys.host}</div>
+				</div>
+				<div class="company_info_flex">
+					<label>地址：{$sys.ads}</label>
+				</div>
+				<div class="company_info_flex">
+					<img src="{$sys.qrcode}"/>
+				</div>
+			</div>
+		</div>
+		{include file="common/footer"/}

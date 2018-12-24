@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" style="width:100%;height:100%;">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <script src="/static/express_mobile/js/mui.min.js"></script>
+        <script src="/static/express_mobile/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+        <link href="/static/express_mobile/css/mui.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/static/express_mobile/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/static/express_mobile/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="/static/express_mobile/css/swiper.min.css" />
+</head>
+<body style="width:100%;height:100%;">
+	<div class="entry-box">
+		<div class="entry fix">
+			<h3>欢迎登陆</h3>
+        	<form action="" method="" name="frm"> 
+        	    <div class="entry-div">
+        	      	<span><i><img src="/static/express_mobile/image/tou.png"></i></span>
+        	      	<input name=""  type="text"  placeholder="  请输入账号" id="mobile">
+        	    </div>     
+        	    <div class="entry-div">
+        	      	<span><i><img src="/static/express_mobile/image/suo.png"></i></span>
+        	      	<input name=""  type="password"  placeholder="  请输入密码  " id="password">
+        	    </div>
+        	    <div class="yzm">
+        	      	<div class="yzm-left" style="height:2em;">
+        	        	<span><i><img src="/static/express_mobile/image/yzm.png"></i></span>
+        	        	<input name=""  type="text"  placeholder="  请输入验证码" id="vercode">
+        	        </div>
+        	    	<div class="yzm-right">
+        	        	<i>	<img src="{:url('verify')}" alt="captcha" onclick="this.src='{:url("verify")}?'+'id='+Math.random()"/></i>
+						<br>
+					</div>
+        	     </div>
+        	    <em>
+        	      <input class="submit" type="button" name="btn" value="登录" />
+        	    </em>
+        	</form>
+			<a href="{:url('user/login/forget')}" class="password-a">忘记密码？</a>
+			<a href="{:url('user/login/reg')}" class="register-a">立即注册</a>
+    	</div>
+	</div>
+</body>
+</html>
+
+<script>
+
+    $('.btn').click(function () {
+        var mobile = $('#mobile').val();
+        var password = $('#password').val();
+        var vercode = $('#vercode').val();
+
+        $.post("{:url('index')}",{username:mobile,password:password,vercode:vercode},function(res){
+
+            if(res.code > 0){
+                alert(res.msg)
+                location.href = "{:url('home/index/index')}";
+
+            }else{
+                alert(res.msg)
+                //    $('.captcha img').attr('src','{:url("verify")}?id='+Math.random());
+            }
+        });
+    })
+</script>

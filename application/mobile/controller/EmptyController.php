@@ -11,11 +11,20 @@ class EmptyController extends Common{
     }
     public function index(){
         if(DBNAME=='page'){
-            db(DBNAME)->where(['id'=>input('catId')])->setInc('hits');
-            $info = db(DBNAME)->where(['id'=>input('catId')])->find();
+            $info = Db::name(DBNAME)->where(['id'=>input('catId')])->find();
+             $info['mobile_content']?$info['content'] =$info['mobile_content']:'';
             $this->assign('info',$info);
-            $template = DBNAME.'/show';
-            return view($template);
+            if($info['template']){
+                $template = $info['template'];
+            }else{
+                $info['template'] = Db::name('category')->where(['id'=>$info['id']])->value('template_show');
+                if($info['template']){
+                    $template = $info['template'];
+                }else{
+                    $template = DBNAME.'_show';
+                }
+            }
+            return $this->fetch($template);
         }else{
             if(DBNAME=='picture'){
                 $setup = db('field')->where(array('moduleid'=>3,'field'=>'group'))->value('setup');
@@ -66,7 +75,8 @@ class EmptyController extends Common{
                 $this->assign('list',$list['data']);
                 $this->assign('page',$page);
             }
-			$template = DBNAME.'/list';
+            $cattemplate = db('category')->where('id',input('catId'))->value('template_list');
+            $template =$cattemplate ? $cattemplate : DBNAME.'_list';
             return view($template);
         }
     }

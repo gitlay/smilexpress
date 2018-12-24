@@ -1,0 +1,98 @@
+{include file="common/header"/}
+	<style type="text/css">
+		header img {
+			width: 100%;
+		}
+		
+		.news_list {
+			background-color: #FFF;
+			padding-bottom: 1.3rem;
+		}
+		
+		.news_list h1 {
+			padding: .1rem .3rem;
+			font-size: .32rem;
+			color: #ff6200;
+		}
+		
+		.news_item {
+			padding: .3rem;
+			display: flex;
+			display: -webkit-flex;
+			justify-content: space-between;
+			border-bottom: 1px dashed #c7c4c4;
+		}
+		
+		.news_item a {
+			position: relative;
+			padding-left: .3rem;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		
+		.news_item a:after {
+			content: ' ';
+			top: .04rem;
+			left: 0;
+			position: absolute;
+			height: .2rem;
+			width: .2rem;
+			background-image: url(/static/express_mobile/image/radio.png);
+			background-size: cover;
+			background-position: center;
+		}
+		
+		.problem_info {
+			padding: .3rem;
+		}
+		
+		.problem_info h1 {
+			position: relative;
+			padding-left: .3rem;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			margin-bottom: .2rem;
+		}
+		
+		.problem_info h1:after {
+			content: ' ';
+			top: .04rem;
+			left: 0;
+			position: absolute;
+			height: .2rem;
+			width: .2rem;
+			background-image: url(/static/express_mobile/image/radio.png);
+			background-size: cover;
+			background-position: center;
+		}
+		
+		.problem_info p {
+			line-height: .36rem;
+			text-indent: 2em;
+		}
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="{$image}"/>
+		</header>
+		<div class="problem_info">
+			<h1>问：{$info.title}</h1>
+			{$info.content|raw}
+		</div>
+		</br>
+		<!-- 新闻列表 s -->
+		<div class="news_list">
+			<h1>相关问题</h1>
+			{php} $catid = input("catId");{/php}
+			{clist db='article' id='vo' where='posid = 3 and catid=".$catid." ' limit='5'}
+
+			<div class="news_item">
+				<a href="{:url('mobile/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}">问：{$vo.title}</a>
+			</div>
+			{/clist}
+		</div>
+		<!-- 新闻列表 e -->
+		{include file="common/footer"/}

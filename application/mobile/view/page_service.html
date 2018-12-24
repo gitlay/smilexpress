@@ -1,0 +1,51 @@
+{include file="common/header"/}
+	<style type="text/css">
+		header img {
+			width: 100%;
+		}
+		
+		.csc_main {
+			padding-top: .8rem;
+			background-color: #FFF;
+			padding-bottom: 1.3rem;
+			display: flex;
+			display: -webkit-flex;
+			justify-content: space-between;
+		}
+		
+		.csc_main div {
+			text-align: center;
+			flex: 1;
+		}
+		
+		.csc_main div img {
+			height: 1.24rem;
+			width: 1.88rem;
+			border-radius: 1.5rem;
+			border: .04rem solid #c4c4c4;
+			display: block;
+			margin: .2rem auto .3rem;
+		}
+		
+		.csc_main div label {
+			color: #ff6200;
+			font-size: .32rem;
+			display: block;
+			margin-bottom: .3rem;
+		}
+		
+		.csc_main div p {
+			color: #3e3a39;
+			font-size: .24rem;
+			line-height: .32rem;
+		}
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="{$image}"/>
+		</header>
+		<div class="csc_main">
+			{$info.content|raw}
+		</div>
+		{include file="common/footer"/}

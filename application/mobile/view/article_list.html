@@ -1,0 +1,69 @@
+{include file="common/header"/}
+	<style type="text/css">
+		header img {
+			width: 100%;
+		}
+		
+		.search_main {
+			padding: .8rem .4rem;
+			text-align: center;
+		}
+		
+		.search_input {
+			height: .8rem;
+			width: 100%;
+			border: .02rem solid #797979;
+			display: flex;
+			display: -webkit-flex;
+			margin-bottom: 2rem;
+		}
+		
+		.search_input input {
+			padding-left: .1rem;
+			flex: 1;
+			-webkit-flex: 1;
+		}
+		
+		.search_input button {
+			background-color: #ff6200;
+			color: #FFF;
+			width: 1.08rem;
+			border-radius: 0rem;
+		}
+		
+		.news_list {
+			background-color: #FFF;
+			padding-bottom: 1.3rem;
+		}
+		
+		.news_item {
+			padding: .3rem;
+			display: flex;
+			display: -webkit-flex;
+			justify-content: space-between;
+			border-bottom: 1px dashed #c7c4c4;
+		}
+		
+		.news_item label {
+			width: 60%;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="{$image}"/>
+		</header>
+		<!-- 新闻列表 s -->
+		<div class="news_list">
+			{volist name="list" id="vo"}
+			<a href="{:url('mobile/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}" class="news_item">
+				<label>{$vo.title}</label>
+				<p>{:toDate($vo["createtime"],'Y-m-d')}</p>
+			</a>
+			{/volist}
+		</div>
+		<!-- 新闻列表 e -->
+		{include file="common/footer"/}

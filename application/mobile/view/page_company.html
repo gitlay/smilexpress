@@ -1,0 +1,77 @@
+{include file="common/header"/}
+	<style type="text/css">
+		header img {
+			width: 100%;
+		}
+		
+		.news_list {
+			background-color: #FFF;
+			padding-bottom: 1.3rem;
+		}
+		
+		.news_list h1 {
+			padding: .1rem .3rem;
+			font-size: .32rem;
+			color: #ff6200;
+		}
+		
+		.news_item {
+			padding: .3rem;
+			display: flex;
+			display: -webkit-flex;
+			justify-content: space-between;
+			border-bottom: 1px dashed #c7c4c4;
+		}
+		
+		.news_item label {
+			position: relative;
+			width: 65%;
+			padding-left: .3rem;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		
+		.news_item label:after {
+			content: ' ';
+			top: .04rem;
+			left: 0;
+			position: absolute;
+			height: .2rem;
+			width: .2rem;
+			background-image: url(image/radio.png);
+			background-size: cover;
+			background-position: center;
+		}
+		
+		.problem_info {
+			padding: .3rem .3rem 1.3rem;
+		}
+		
+		.problem_info h1 {
+			position: relative;
+			font-size: .34rem;
+			line-height: .46rem;
+			margin-bottom: .4rem;
+			text-align: center;
+		}
+		.problem_info img{
+			width: 100%;
+			margin-bottom: .2rem;
+		}
+		.problem_info p {
+			line-height: .36rem;
+			text-indent: 2em;
+			margin-bottom: .2rem;
+		}
+	</style>
+
+	<body style="background-color:#FFF;">
+		<header>
+			<img src="{$image}"/>
+		</header>
+		<div class="problem_info">
+			<h1>{$info.title} </h1>
+			{$info.content|raw}
+		</div>
+		{include file="common/footer"/}
